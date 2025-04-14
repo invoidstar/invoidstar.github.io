@@ -21,10 +21,10 @@ Publications
 
 Honors and Awards
 ======
-[Apr. 2023] Outstanding Graduates of Shandong Province
-[May 2022] Meritorious Winner in Mathematical Contest in Modeling
-[Dec. 2021] Third Prize in Chinese Undergraduate Physics Experiment Tournament
-[Apr. 2021] Honorable Mention Winner in Mathematical Contest in Modeling
+[Apr. 2023] Outstanding Graduates of Shandong Province <br>
+[May 2022] Meritorious Winner in Mathematical Contest in Modeling <br>
+[Dec. 2021] Third Prize in Chinese Undergraduate Physics Experiment Tournament <br>
+[Apr. 2021] Honorable Mention Winner in Mathematical Contest in Modeling <br>
 [Nov. 2020] Third Prize in National English Competition for College Students
 
 Contact with me
