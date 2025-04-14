@@ -11,17 +11,17 @@ I am Qi Chu, currently studying Software Engineering at the School of Software, 
 
 NEWS
 ======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files 
+TBD
 
 Publications
 ======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files 
-
+[IEEE TMM 2024] Jiang Yu, Yuehang  Wang, Siqi Li, Yongji Zhang, Qianren Guo, Qi Chu, Yue Gao*, EvCSLR: Event-Guided Continuous Sign Language Recognition and Benchmark, IEEE Transactions on Multimedia, 2024.
 
 Honar and Award
 ======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files 
+[2023/04] Outstanding Graduates of Shandong Province
 
 Contact
 ======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files 
+Email: 3518925535@qq.com
+
