@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am Qi Chu, currently studying Software Engineering at the School of Software, Jilin University, and expected to graduate in June 2026. My current research focuses primarily on visual-text models, image restoration (deblurring, low-light enhancement), and video understanding (retrieval, recognition), among other areas.
+I am Qi Chu(初琦), currently studying Software Engineering at the School of Software, Jilin University, and expected to graduate in June 2026. My current research focuses primarily on visual-text models, image restoration (deblurring, low-light enhancement), and video understanding (retrieval, recognition), among other areas.
 
 NEWS
 ======
