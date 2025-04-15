@@ -29,5 +29,5 @@ Honors and Awards
 
 Contact with me
 ======
-Email: 3518925535@qq.com
+Email: chuqi23@mails.jlu.edu.cn
 
