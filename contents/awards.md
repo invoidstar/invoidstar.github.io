@@ -1,3 +1,8 @@
+- [2025.12] “LangChao” Scholarship
+
+- [2023.12] Third Prize in China Postgraduate Mathematical Contest in Modeling
+
+- [2023.11] Graduate Academic Scholarship
 
 - [2023.04] Outstanding Graduates of Shandong Province
 
