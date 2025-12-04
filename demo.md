@@ -17,13 +17,3 @@ Publications
 [IEEE TII 2025] Qi Chu, Yuehang Wang, Yongji Zhang, Yu Jiang*, Event-based Image Deblurring via Cross-Modal Interaction Fusion, IEEE Transactions on Industrial Informatics, 2025.
 
 [IEEE TMM 2024] Yu Jiang, Yuehang Wang, Siqi Li, Yongji Zhang, Qianren Guo, Qi Chu, Yue Gao*, EvCSLR: Event-Guided Continuous Sign Language Recognition and Benchmark, IEEE Transactions on Multimedia, 2024.
-
-Honors and Awards
-[Apr. 2023] Outstanding Graduates of Shandong Province
-[May 2022] Meritorious Winner in Mathematical Contest in Modeling
-[Dec. 2021] Third Prize in Chinese Undergraduate Physics Experiment Tournament
-[Apr. 2021] Honorable Mention Winner in Mathematical Contest in Modeling
-[Nov. 2020] Third Prize in National English Competition for College Students
-
-Contact with me
-Email: chuqi23@mails.jlu.edu.cn
