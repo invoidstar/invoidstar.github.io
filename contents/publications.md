@@ -10,12 +10,12 @@
 
 #### Published
 
-- [AAAI 2026] Qianren Guo, Yuehang Wang, Yongji Zhang, <strong>Qi Chu</strong>, Sen Liu, Yu Jiang*, HyperSign: Hierarchical Hypergraph-based Co-occurrence Modeling for Sign Language Recognition and Translation, AAAI Conference on Artificial Intelligence, 2026. [[Paper]]() [[Code]]()
+- [AAAI 2026] Qianren Guo, Yuehang Wang, Yongji Zhang, <strong>Qi Chu</strong>, Sen Liu, Yu Jiang*, HyperSign: Hierarchical Hypergraph-based Co-occurrence Modeling for Sign Language Recognition and Translation, <strong>AAAI Conference on Artificial Intelligence</strong>, 2026. [[Paper]]() [[Code]]()
 
 - [IEEE TII 2025] <strong>Qi Chu</strong>, Yuehang Wang, Yongji Zhang, Yu Jiang*, Event-based Image Deblurring via Cross-Modal Interaction Fusion, <strong>IEEE Transactions on Industrial Informatics</strong>, 2025. [[Paper]](https://ieeexplore.ieee.org/document/11247836) [[Code]](https://github.com/senli1073/LaNCor)
 
-- [IEEE ICUS 2025] Yong Wang, Qi Hong, Siqi Li, <strong>Qi Chu</strong>, Qianren Guo, Kai Wang*, DGRFormer: A Hand‐Gesture Recognition Framework for Underwater Human–Robot Interaction. [[Paper]](https://ieeexplore.ieee.org/document/10814091)
+- [IEEE ICUS 2025] Yong Wang, Qi Hong, Siqi Li, <strong>Qi Chu</strong>, Qianren Guo, Kai Wang*, DGRFormer: A Hand‐Gesture Recognition Framework for Underwater Human–Robot Interaction, <strong>IEEE International Conference on Unmanned Systems</strong>, 2025. [[Paper]](https://ieeexplore.ieee.org/document/10814091)
 
-- [IEEE TMM 2024] Yu Jiang, Yuehang Wang, Siqi Li, Yongji Zhang, Qianren Guo, <strong>Qi Chu</strong>, Yue Gao*, EvCSLR: Event-Guided Continuous Sign Language Recognition and Benchmark, IEEE Transactions on Multimedia, 2024. [[Paper]](https://ieeexplore.ieee.org/document/10814091) [[Code]](https://github.com/diamondxx/EvCSLR)
+- [IEEE TMM 2024] Yu Jiang, Yuehang Wang, Siqi Li, Yongji Zhang, Qianren Guo, <strong>Qi Chu</strong>, Yue Gao*, EvCSLR: Event-Guided Continuous Sign Language Recognition and Benchmark, <strong>IEEE Transactions on Multimedia</strong>, 2024. [[Paper]](https://ieeexplore.ieee.org/document/10814091) [[Code]](https://github.com/diamondxx/EvCSLR)
 
 
