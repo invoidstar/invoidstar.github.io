@@ -2,11 +2,11 @@
 
 - [2025.11] Two paper has been submitted to CVPR.
 
-- [2025.11] One paper has been submitted to CES.
+- [2025.11] One paper has been submitted to CES <strong>Under Review</strong>.
 
-- [2025.10] One paper has been submitted to TII.
+- [2025.10] One paper has been submitted to TII <strong>Major Review</strong>.
 
-- [2025.10] One paper has been submitted to PR.
+- [2025.10] One paper has been submitted to PR <strong>Under Review</strong>.
 
 #### Published
 
