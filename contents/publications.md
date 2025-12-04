@@ -8,9 +8,6 @@
 
 - [2025.10] One paper has been submitted to PR <strong>Under Review</strong>.
 
-#### Published
-(* indicates corresponding author, † indicates equal contribution)
-
 #### Published <sub><sup><span style="color:gray;">(* indicates corresponding author, † indicates equal contribution)</span></sup></sub>
 
 
