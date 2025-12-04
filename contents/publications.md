@@ -10,7 +10,6 @@
 
 #### Published <sub><sup><span style="color:gray;">(* indicates corresponding author, † indicates equal contribution)</span></sup></sub>
 
-
 - [AAAI 2026] Qianren Guo, Yuehang Wang, Yongji Zhang, <strong>Qi Chu</strong>, Sen Liu, Yu Jiang*, HyperSign: Hierarchical Hypergraph-based Co-occurrence Modeling for Sign Language Recognition and Translation, <strong>AAAI Conference on Artificial Intelligence</strong>, 2026.
 
 - [IEEE TII 2025] <strong>Qi Chu</strong>, Yuehang Wang, Yongji Zhang, Yu Jiang*, Event-based Image Deblurring via Cross-Modal Interaction Fusion, <strong>IEEE Transactions on Industrial Informatics</strong>, 2025. [[Paper]](https://ieeexplore.ieee.org/document/11247836)
