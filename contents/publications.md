@@ -9,6 +9,7 @@
 - [2025.10] One paper has been submitted to PR <strong>Under Review</strong>.
 
 #### Published
+(* indicates corresponding author, † indicates equal contribution)
 
 - [AAAI 2026] Qianren Guo, Yuehang Wang, Yongji Zhang, <strong>Qi Chu</strong>, Sen Liu, Yu Jiang*, HyperSign: Hierarchical Hypergraph-based Co-occurrence Modeling for Sign Language Recognition and Translation, <strong>AAAI Conference on Artificial Intelligence</strong>, 2026.
 
