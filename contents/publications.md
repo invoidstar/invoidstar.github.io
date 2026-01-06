@@ -14,8 +14,7 @@
 
 - [IEEE TII 2025] <strong>Qi Chu</strong>, Yuehang Wang, Yongji Zhang, Yu Jiang*, Event-based Image Deblurring via Cross-Modal Interaction Fusion, <strong>IEEE Transactions on Industrial Informatics</strong>, 2025. [[Paper]](https://ieeexplore.ieee.org/document/11247836)
 
-- [IEEE ICUS 2025] Yong Wang, Qi Hong, <strong>Qi Chu</strong>, Qianren Guo, Kai Wang*, DGRFormer: A Hand‐Gesture Recognition Framework for Underwater Human–Robot Interaction, <strong>IEEE International Conference on Unmanned Systems</strong>, 2025.
+- [IEEE ICUS 2025] Yong Wang, Qi Hong, <strong>Qi Chu</strong>, Qianren Guo, Kai Wang*, DGRFormer: A Hand‐Gesture Recognition Framework for Underwater Human–Robot Interaction, <strong>IEEE International Conference on Unmanned Systems</strong>, 2025. [[Paper]](https://ieeexplore.ieee.org/document/11294307)
 
 - [IEEE TMM 2024] Yu Jiang, Yuehang Wang, Siqi Li, Yongji Zhang, Qianren Guo, <strong>Qi Chu</strong>, Yue Gao*, EvCSLR: Event-Guided Continuous Sign Language Recognition and Benchmark, <strong>IEEE Transactions on Multimedia</strong>, 2024. [[Paper]](https://ieeexplore.ieee.org/document/10814091) [[Code]](https://github.com/diamondxx/EvCSLR)
-
 
