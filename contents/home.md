@@ -17,4 +17,4 @@ Visual-Language Models, Image Restoration (deblurring, low-light enhancement), a
 
 [2025.10] One Paper has been accepted by TII.
 
-##### Last updated: Dec. 04, 2025
+##### Last updated: Jan. 13, 2026
