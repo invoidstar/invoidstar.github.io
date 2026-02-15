@@ -9,6 +9,7 @@
 - [2025.10] One paper has been submitted to PR.
   
 #### Published <sub><sup><span style="color:gray;">(* indicates corresponding author, † indicates equal contribution)</span></sup></sub>
+- [IEEE TII 2026] <strong>Qi Chu</strong>, Yuehang Wang, Qianren Guo, Shuang Xu, Yongji Zhang, Sen Liu, Yu Jiang*, TextSLR: Learning Text-Aware Representations for Sign Language Recognition, <strong>IEEE Transactions on Industrial Informatics</strong>, 2026.
 
 - [AAAI 2026] Qianren Guo, Yuehang Wang, Yongji Zhang, <strong>Qi Chu</strong>, Sen Liu, Yu Jiang*, HyperSign: Hierarchical Hypergraph-based Co-occurrence Modeling for Sign Language Recognition and Translation, <strong>AAAI Conference on Artificial Intelligence</strong>, 2026.
 
