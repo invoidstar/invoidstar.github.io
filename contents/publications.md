@@ -1,10 +1,9 @@
 #### Submitted
+- [2026.02] One paper has been submitted to TII.
 
-- [2025.11] Two paper has been submitted to CVPR.
+- [2025.11] One paper has been submitted to CVPR.
 
 - [2025.11] One paper has been submitted to CES.
-
-- [2025.10] One paper has been submitted to TII.
 
 - [2025.10] One paper has been submitted to PR.
   
