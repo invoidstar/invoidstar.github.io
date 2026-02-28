@@ -1,13 +1,13 @@
 #### Submitted
-- [2026.02] One paper has been submitted to TII.
-
-- [2025.11] One paper has been submitted to CVPR.
+- [2026.02] Two paper has been submitted to TII.
 
 - [2025.11] One paper has been submitted to CES.
 
 - [2025.10] One paper has been submitted to PR.
   
 #### Published <sub><sup><span style="color:gray;">(* indicates corresponding author, † indicates equal contribution)</span></sup></sub>
+- [CES 2026] <strong>Qi Chu</strong>, Shuang Xu*, Yuehang Wang, Yongji Zhang, Qianren Guo, Hongde Qin, Yu Jiang, GANet: Muliti-Modal Adaptation Continuous Sign Language Recognition via Gloss-Aware Network, <strong>Complex Engineering Systems</strong>, 2026.
+
 - [IEEE TII 2026] <strong>Qi Chu</strong>, Yuehang Wang, Qianren Guo, Shuang Xu, Yongji Zhang, Sen Liu, Yu Jiang*, TextSLR: Learning Text-Aware Representations for Sign Language Recognition, <strong>IEEE Transactions on Industrial Informatics</strong>, 2026.
 
 - [AAAI 2026] Qianren Guo, Yuehang Wang, Yongji Zhang, <strong>Qi Chu</strong>, Sen Liu, Yu Jiang*, HyperSign: Hierarchical Hypergraph-based Co-occurrence Modeling for Sign Language Recognition and Translation, <strong>AAAI Conference on Artificial Intelligence</strong>, 2026.
