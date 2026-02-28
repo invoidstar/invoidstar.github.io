@@ -1,8 +1,6 @@
 #### Submitted
 - [2026.02] Two paper has been submitted to TII.
 
-- [2025.11] One paper has been submitted to CES.
-
 - [2025.10] One paper has been submitted to PR.
   
 #### Published <sub><sup><span style="color:gray;">(* indicates corresponding author, † indicates equal contribution)</span></sup></sub>
