@@ -12,10 +12,12 @@ Email: chuqi23[at]mails.jlu.edu.cn
 Visual-Language Models, Image Restoration (deblurring, low-light enhancement), and Video Understanding (retrieval, recognition)
 
 #### News
+[2026.03] One Paper has been accepted by CES.
+
 [2026.02] One Paper has been accepted by TII.
 
 [2025.11] One Paper has been accepted by AAAI.
 
 [2025.10] One Paper has been accepted by TII.
 
-##### Last updated: Feb. 15, 2026
+##### Last updated: Mar. 01, 2026
