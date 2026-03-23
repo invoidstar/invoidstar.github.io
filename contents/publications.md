@@ -6,9 +6,10 @@
 #### Published <sub><sup><span style="color:gray;">(* indicates corresponding author, † indicates equal contribution)</span></sup></sub>
 - [CES 2026] <strong>Qi Chu</strong>, Shuang Xu*, Yuehang Wang, Yongji Zhang, Qianren Guo, Hongde Qin, Yu Jiang, GANet: Muliti-Modal Adaptation Continuous Sign Language Recognition via Gloss-Aware Network, <strong>Complex Engineering Systems</strong>, 2026.
 
-- [IEEE TII 2026] <strong>Qi Chu</strong>, Yuehang Wang, Qianren Guo, Shuang Xu, Yongji Zhang, Sen Liu, Yu Jiang*, TextSLR: Learning Text-Aware Representations for Sign Language Recognition, <strong>IEEE Transactions on Industrial Informatics</strong>, 2026.
+- [IEEE TII 2026] <strong>Qi Chu</strong>, Yuehang Wang, Qianren Guo, Shuang Xu, Yongji Zhang, Sen Liu, Yu Jiang*, TextSLR: Learning Text-Aware Representations for Sign Language Recognition, <strong>IEEE Transactions on Industrial Informatics</strong>, 2026. [[Paper]](https://ieeexplore.ieee.org/document/11447342)
 
 - [AAAI 2026] Qianren Guo, Yuehang Wang, Yongji Zhang, <strong>Qi Chu</strong>, Sen Liu, Yu Jiang*, HyperSign: Hierarchical Hypergraph-based Co-occurrence Modeling for Sign Language Recognition and Translation, <strong>AAAI Conference on Artificial Intelligence</strong>, 2026.
+[[Paper]](https://ojs.aaai.org/index.php/AAAI/article/view/42440)
 
 - [IEEE TII 2025] <strong>Qi Chu</strong>, Yuehang Wang, Yongji Zhang, Yu Jiang*, Event-based Image Deblurring via Cross-Modal Interaction Fusion, <strong>IEEE Transactions on Industrial Informatics</strong>, 2025. [[Paper]](https://ieeexplore.ieee.org/document/11247836)
 
