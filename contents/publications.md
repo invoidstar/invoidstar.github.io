@@ -9,7 +9,7 @@
 - [IEEE TII 2026] <strong>Qi Chu</strong>, Yuehang Wang, Qianren Guo, Shuang Xu, Yongji Zhang, Sen Liu, Yu Jiang*, TextSLR: Learning Text-Aware Representations for Sign Language Recognition, <strong>IEEE Transactions on Industrial Informatics</strong>, 2026. [[Paper]](https://ieeexplore.ieee.org/document/11447342)
 
 - [AAAI 2026] Qianren Guo, Yuehang Wang, Yongji Zhang, <strong>Qi Chu</strong>, Sen Liu, Yu Jiang*, HyperSign: Hierarchical Hypergraph-based Co-occurrence Modeling for Sign Language Recognition and Translation, <strong>AAAI Conference on Artificial Intelligence</strong>, 2026.
-[[Paper]](https://ojs.aaai.org/index.php/AAAI/article/view/42440)
+[[Paper]](https://ojs.aaai.org/index.php/AAAI/article/view/42440) [[Project]](https://invoidstar.github.io/HyperSign/))
 
 - [IEEE TII 2025] <strong>Qi Chu</strong>, Yuehang Wang, Yongji Zhang, Yu Jiang*, Event-based Image Deblurring via Cross-Modal Interaction Fusion, <strong>IEEE Transactions on Industrial Informatics</strong>, 2025. [[Paper]](https://ieeexplore.ieee.org/document/11247836)
 
