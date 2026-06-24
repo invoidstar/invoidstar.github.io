@@ -1,7 +1,10 @@
 #### Submitted
-- [2026.04] Two paper has been submitted to ACM MM.
 
-- [2026.04] Two paper has been submitted to PR.
+- [2026.06] Three papers has been submitted to PR.
+
+- [2026.04] Two papers has been submitted to ACM MM.
+
+
   
 #### Published <sub><sup><span style="color:gray;">(* indicates corresponding author, † indicates equal contribution)</span></sup></sub>
 - [CES 2026] <strong>Qi Chu</strong>, Shuang Xu*, Yuehang Wang, Yongji Zhang, Qianren Guo, Hongde Qin, Yu Jiang, GANet: Multi-Modal Adaptation Continuous Sign Language Recognition via Gloss-Aware Network, <strong>Complex Engineering Systems</strong>, 2026. [[Paper]](https://www.oaepublish.com/articles/ces.2025.79)
