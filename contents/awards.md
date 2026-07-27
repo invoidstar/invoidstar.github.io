@@ -1,8 +1,10 @@
-- [2025.12] “LangChao” Scholarship
+- [2026.09] Doctoral Academic Scholarship (UESTC)
+
+- [2025.12] “LangChao” Scholarship (JLU)
 
 - [2023.12] Third Prize in China Postgraduate Mathematical Contest in Modeling
 
-- [2023.11] Graduate Academic Scholarship
+- [2023.11] Graduate Academic Scholarship (JLU)
 
 - [2023.04] Outstanding Graduates of Shandong Province
 
