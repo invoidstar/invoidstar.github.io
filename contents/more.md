@@ -5,6 +5,7 @@
 
 - Reviewer for AAAI Conference on Artificial Intelligence (AAAI)
 - Reviewer for IEEE Transactions on Multimedia (TMM)
+- Reviewer for IEEE Transactions on Industrial Informatics (TII)
 
 #### More Information
 - TO BE UPDATED
