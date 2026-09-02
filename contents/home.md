@@ -1,15 +1,15 @@
 [![invoidstar](https://img.shields.io/badge/invoidstar-github-blue?logo=github)](https://github.com/invoidstar)
 [![CSDN Blog](https://img.shields.io/badge/CSDN%20Blog-FFA116?style=flat-square)](https://blog.csdn.net/qq_52358603)
 
-I am Qi Chu(初琦), currently studying Software Engineering in the College of Software, Jilin University, and expected to graduate in June 2026. I will be pursuing a Ph.D. in Computer Science and Technology at the School of Computer Science and Engineering, University of Electronic Science and Technology of China (UESTC), starting in September 2026.
+I am Qi Chu (初琦), currently a Ph.D. student in Computer Science and Technology at the School of Computer Science and Engineering, University of Electronic Science and Technology of China (UESTC), since September 2026.
 
 #### Contact
 
-Email: chuqi23[at]mails.jlu.edu.cn
+Email: 202611080345[at]std.uestc.edu.cn
 
 #### Research Interests
 
-Visual-Language Models, Image Restoration (deblurring, low-light enhancement), and Video Understanding (retrieval, recognition)
+Visual-Language-Action Models, Visual-Language Models, Image Restoration (deblurring, low-light enhancement), and Video Understanding (retrieval, recognition)
 
 #### News
 [2026.03] One Paper has been accepted by CES.
