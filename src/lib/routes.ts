@@ -1,5 +1,5 @@
 export type Lang = 'en' | 'zh';
-export type Section = 'home' | 'publications' | 'projects' | 'about';
+export type Section = 'home' | 'publications' | 'projects' | 'datasets' | 'about';
 
 const base = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '/');
 

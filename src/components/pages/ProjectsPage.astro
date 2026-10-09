@@ -18,8 +18,6 @@ const t = strings(lang);
 <section class="section subpage-content">
   <div class="shell">
     <div class="group-heading"><p class="section-eyebrow">01 / RESEARCH</p><h2>{t.researchProjects}</h2></div>
-    <div class="project-grid project-grid--full">{projects.filter(p => p.category === 'research').map(item => <ProjectCard item={item} lang={lang}/>)}</div>
-    <div class="group-heading group-heading--spaced"><p class="section-eyebrow">02 / SIDE PROJECTS</p><h2>{t.sideProjects}</h2></div>
-    <div class="project-grid project-grid--full">{projects.filter(p => p.category === 'tools').map(item => <ProjectCard item={item} lang={lang}/>)}</div>
+    <div class="project-grid project-grid--full">{projects.map(item => <ProjectCard item={item} lang={lang}/>)}</div>
   </div>
 </section>

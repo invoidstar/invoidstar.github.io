@@ -3,12 +3,12 @@ import type { Project } from '../data/content';
 import type { Lang } from '../lib/routes';
 interface Props { item: Project; lang: Lang; }
 const {item, lang} = Astro.props;
-const mark = ({elysia:'ER',radar:'VR',iislu:'IS',matcher:'CM'} as Record<string,string>)[item.id] || '✧';
+const mark = ({elysia:'ER',radar:'VR'} as Record<string,string>)[item.id] || '✧';
 ---
 <article class="project-card">
   <div class={'project-cover project-cover--' + item.id} aria-hidden="true">
     <div class="project-cover-orbit"></div>
-    <div class="project-cover-top"><span>INVOIDSTAR / WORKS</span><span>0{item.id === 'elysia' ? '1' : item.id === 'radar' ? '2' : item.id === 'iislu' ? '3' : '4'}</span></div>
+    <div class="project-cover-top"><span>INVOIDSTAR / WORKS</span><span>0{item.id === 'elysia' ? '1' : '2'}</span></div>
     <span class="project-cover-mark">{mark}</span>
     <div class="project-cover-bottom"><span>✳</span><span>RESEARCH & CREATE</span></div>
   </div>

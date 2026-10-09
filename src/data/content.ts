@@ -14,13 +14,24 @@ export interface Publication {
 export interface Project {
   id: string;
   name: string;
-  category: 'research' | 'tools';
+  category: 'research';
   type: { en: string; zh: string };
   subtitle: { en: string; zh: string };
   description: { en: string; zh: string };
   tags: string[];
   links: { label: string; url: string }[];
   featured?: boolean;
+}
+
+export interface Dataset {
+  id: string;
+  name: string;
+  fullName: { en: string; zh: string };
+  description: { en: string; zh: string };
+  detail: { en: string; zh: string };
+  category: { en: string; zh: string };
+  modalities: string[];
+  links: { label: string; url: string }[];
 }
 
 export const publications: Publication[] = [
@@ -112,26 +123,77 @@ export const projects: Project[] = [
     tags: ['VLA', 'Literature', 'Benchmark'],
     links: [{label:'Website',url:'https://invoidstar.github.io/VLA-Radar/'},{label:'GitHub',url:'https://github.com/invoidstar/VLA-Radar'}],
   },
+
+];
+
+
+export const datasets: Dataset[] = [
   {
-    id: 'iislu', name: 'IISLU', category: 'research', featured: true,
-    type: {en: 'DATASET & BENCHMARK', zh: '数据集与基准'},
-    subtitle: {en: 'Industrial Information Sign Language Understanding.', zh: '工业信息手语理解数据集。'},
+    id: 'evdb',
+    name: 'EVDB',
+    fullName: {en: 'Event-based Deblurring Dataset', zh: '事件相机图像去模糊数据集'},
+    category: {en: 'IMAGE RESTORATION', zh: '图像复原'},
     description: {
-      en: 'A dataset initiative for industrial sign language recognition and translation, spanning vocabulary understanding and sequence modeling.',
-      zh: '面向工业场景的手语识别与翻译数据集项目，涵盖词汇识别与序列理解。',
+      en: 'Real-world image deblurring with synchronized blurry images and event streams.',
+      zh: '包含真实模糊图像和事件流的事件视觉图像去模糊数据集。',
     },
-    tags: ['Sign Language', 'Dataset', 'Multimodal'], links: [],
+    detail: {
+      en: 'The original site describes a real-world evaluation set without ground-truth sharp images. The linked publication is a paper reference, not a direct download.',
+      zh: '旧主页注明该数据集包含无清晰图像真值的真实场景测试集。下方链接为相关论文，而非直接数据下载地址。',
+    },
+    modalities: ['Event', 'RGB', 'Deblurring'],
+    links: [{label: 'Paper', url: 'https://ieeexplore.ieee.org/document/11247836'}],
   },
   {
-    id: 'matcher', name: 'Color Matcher', category: 'tools', featured: true,
-    type: {en: 'CREATIVE SOFTWARE TOOL', zh: '个人开发工具'},
-    subtitle: {en: 'From images to practical color palettes.', zh: '让图像配色与色卡匹配更高效。'},
+    id: 'evcslr',
+    name: 'EvCSLR',
+    fullName: {en: 'Event-based Continuous Sign Language Recognition', zh: '基于事件视觉的连续手语识别数据集'},
+    category: {en: 'SIGN LANGUAGE', zh: '手语理解'},
     description: {
-      en: 'A browser-based visual tool for color-card matching, region editing, and palette exploration.',
-      zh: '支持色卡匹配、区域编辑和配色预览的浏览器端可视化工具。',
+      en: 'An event-based dataset and benchmark for continuous sign language recognition.',
+      zh: '面向连续手语识别研究的事件视觉数据集与评测基准。',
     },
-    tags: ['Web App', 'Image Processing', 'Open Source'],
-    links: [{label:'Website',url:'https://invoidstar.github.io/color-matcher/'},{label:'GitHub',url:'https://github.com/invoidstar/color-matcher'}],
+    detail: {
+      en: 'The research repository contains the associated publication and project materials.',
+      zh: '可通过公开研究仓库查看关联论文及项目资料。',
+    },
+    modalities: ['Event', 'Sign Language', 'CSLR'],
+    links: [
+      {label:'Paper',url:'https://ieeexplore.ieee.org/document/10814091'},
+      {label:'Repository',url:'https://github.com/diamondxx/EvCSLR'},
+    ],
+  },
+  {
+    id: 'illumslr',
+    name: 'IllumSLR',
+    fullName: {en: 'Sign Language Recognition under Diverse Illumination', zh: '多光照条件手语识别数据集'},
+    category: {en: 'MULTIMODAL PERCEPTION', zh: '多模态感知'},
+    description: {
+      en: 'An isolated sign language dataset captured under varying illumination, involving RGB, skeleton, and event modalities.',
+      zh: '覆盖不同光照条件的孤立手语识别数据集，包含 RGB、骨骼与事件等模态。',
+    },
+    detail: {
+      en: 'The previous website reports 700 sign classes. The link below points to the related paper.',
+      zh: '旧主页记录该数据集覆盖 700 个手语类别。下方链接指向相关论文。',
+    },
+    modalities: ['RGB', 'Skeleton', 'Event'],
+    links: [{label:'Paper',url:'https://ieeexplore.ieee.org/document/11447342'}],
+  },
+  {
+    id: 'evsl',
+    name: 'EvSL',
+    fullName: {en: 'Event-based Sign Language Dataset', zh: '事件视觉手语数据集'},
+    category: {en: 'SIGN LANGUAGE', zh: '手语理解'},
+    description: {
+      en: 'An event-based sign language dataset designed for multiple sign language understanding tasks.',
+      zh: '面向多类手语理解任务的事件视觉数据集。',
+    },
+    detail: {
+      en: 'Dataset information is retained from the previous website. A verified public download or publication link is not yet listed.',
+      zh: '相关简介沿用旧主页；暂未提供经过核实的公开下载或论文链接。',
+    },
+    modalities: ['Event', 'Sign Language', 'Multitask'],
+    links: [],
   },
 ];
 
@@ -169,7 +231,7 @@ export const awards = [
 export const copy = {
   en: {
     brandCaption: 'ACADEMIC HOMEPAGE',
-    nav: { home: 'Home', publications: 'Publications', projects: 'Projects', about: 'About' },
+    nav: { home: 'Home', publications: 'Publications', projects: 'Projects', datasets: 'Datasets', about: 'About' },
     heroEyebrow: 'HELLO, I’M',
     heroName: 'Qi Chu',
     heroCn: '初琦',
@@ -184,10 +246,10 @@ export const copy = {
     microUniversity: 'University of Electronic Science and Technology of China',
     sectionResearch: 'Research interests',
     researchSubtitle: 'Connecting intelligent perception, purposeful actions, and the systems that make research reproducible.',
-    sectionPubs: 'Selected publications',
-    pubsSubtitle: 'A selection of peer-reviewed research papers. Visit the full list for more.',
-    sectionProjects: 'Things I build',
-    projectsSubtitle: 'Research infrastructure, open scientific resources, and practical software.',
+    sectionPubs: 'Publications',
+    pubsSubtitle: 'All published journal and conference papers, with a dedicated searchable archive.',
+    sectionProjects: 'Research projects',
+    projectsSubtitle: 'Research frameworks and open scientific resources that support reproducible AI research.',
     sectionNews: 'Recent notes',
     newsSubtitle: 'A few updates along the way.',
     sectionReach: 'Let’s connect.',
@@ -195,13 +257,20 @@ export const copy = {
     reachBtn: 'Send an email',
     allPublications: 'All publications',
     allProjects: 'All projects',
+    allDatasets: 'View datasets',
+    sectionDatasets: 'Research datasets',
+    datasetsSubtitle: 'Datasets and benchmarks from vision, event-based perception, and sign language research.',
+    pageDatasetEyebrow: 'DATASETS & BENCHMARKS',
+    pageDatasetTitle: 'Datasets',
+    pageDatasetIntro: 'Research datasets curated from my previous academic website, with publication or repository links where available.',
+    datasetInfoNote: 'Publication links are labeled as papers; they are not necessarily direct dataset downloads.',
     moreNews: 'More about me',
     pagePubEyebrow: 'ACADEMIC OUTPUT',
     pagePubTitle: 'Publications',
-    pagePubIntro: 'Selected journal and conference papers in multimodal learning, sign language understanding, and computer vision.',
-    pageProjectEyebrow: 'RESEARCH & SIDE PROJECTS',
+    pagePubIntro: 'All published journal and conference papers, organized by topic with ten papers per page.',
+    pageProjectEyebrow: 'RESEARCH SYSTEMS & RESOURCES',
     pageProjectTitle: 'Projects',
-    pageProjectIntro: 'A collection of research platforms, datasets, and tools I am developing or contributing to.',
+    pageProjectIntro: 'Research platforms and open resources I develop or contribute to, with a focus on robot learning and VLA research.',
     researchProjects: 'Research & open resources',
     sideProjects: 'Tools & experiments',
     inDevelopment: 'In development',
@@ -234,7 +303,7 @@ export const copy = {
   },
   zh: {
     brandCaption: '个人学术主页',
-    nav: { home: '首页', publications: '论文', projects: '项目', about: '关于' },
+    nav: { home: '首页', publications: '论文', projects: '项目', datasets: '数据集', about: '关于' },
     heroEyebrow: '你好，我是',
     heroName: 'Qi Chu',
     heroCn: '初琦',
@@ -249,10 +318,10 @@ export const copy = {
     microUniversity: '电子科技大学 · University of Electronic Science and Technology of China',
     sectionResearch: '研究方向',
     researchSubtitle: '连接多模态感知、具身行动与可复用的科研系统。',
-    sectionPubs: '代表论文',
-    pubsSubtitle: '部分已发表研究成果，完整列表可在论文页面查看。',
-    sectionProjects: '正在构建',
-    projectsSubtitle: '科研基础设施、开放研究资源，以及一些实用的个人开发工具。',
+    sectionPubs: '论文发表',
+    pubsSubtitle: '展示全部已发表论文，独立页面支持方向筛选与每页 10 篇分页浏览。',
+    sectionProjects: '科研项目',
+    projectsSubtitle: '用于具身智能研究与可复现科研实践的框架和开放知识资源。',
     sectionNews: '近期动态',
     newsSubtitle: '研究道路上的一些记录。',
     sectionReach: '保持联系。',
@@ -260,13 +329,20 @@ export const copy = {
     reachBtn: '发送邮件',
     allPublications: '全部论文',
     allProjects: '全部项目',
+    allDatasets: '查看全部数据集',
+    sectionDatasets: '研究数据集',
+    datasetsSubtitle: '涵盖视觉感知、事件视觉及手语理解的研究数据集与基准。',
+    pageDatasetEyebrow: '数据集与基准',
+    pageDatasetTitle: '研究数据集',
+    pageDatasetIntro: '整理自此前学术主页中的数据集资料，并明确标注可访问的论文与仓库链接。',
+    datasetInfoNote: 'Paper 标识的是相关论文链接，并不代表数据集可直接下载。',
     moreNews: '了解更多',
     pagePubEyebrow: '学术成果',
     pagePubTitle: '论文发表',
-    pagePubIntro: '多模态学习、手语理解与计算机视觉方向的期刊及会议论文。',
-    pageProjectEyebrow: '科研项目与个人开发',
+    pagePubIntro: '完整的正式发表论文列表，支持研究方向筛选，每页最多展示 10 篇。',
+    pageProjectEyebrow: '科研框架与开放资源',
     pageProjectTitle: '项目作品',
-    pageProjectIntro: '正在开发或参与建设的科研框架、数据集、知识资源与实用工具。',
+    pageProjectIntro: '聚焦具身智能研究、机器人学习框架与开放科研知识基础设施。',
     researchProjects: '科研项目与开放资源',
     sideProjects: '工具与实验',
     inDevelopment: '开发中',
@@ -302,5 +378,5 @@ export const copy = {
 export function strings(lang: Lang) {
   return copy[lang];
 }
-export const navOrder: Section[] = ['home', 'publications', 'projects', 'about'];
+export const navOrder: Section[] = ['home', 'publications', 'projects', 'datasets', 'about'];
 export const email = '202611080345@std.uestc.edu.cn';

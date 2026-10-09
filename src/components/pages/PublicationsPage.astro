@@ -2,9 +2,11 @@
 import type { Lang } from '../../lib/routes';
 import { publications, strings } from '../../data/content';
 import Publication from '../Publication.astro';
+import { PAGE_SIZE } from '../../lib/pagination.mjs';
 interface Props {lang: Lang;}
 const {lang} = Astro.props;
 const t = strings(lang);
+const initialVisible = Math.min(PAGE_SIZE, publications.length);
 ---
 <section class="subpage-hero">
   <div class="shell">
@@ -22,26 +24,109 @@ const t = strings(lang);
       <button type="button" class="filter-button" data-publication-filter="Multimodal" aria-pressed="false">{t.filterMultimodal}</button>
       <button type="button" class="filter-button" data-publication-filter="Vision" aria-pressed="false">{t.filterVision}</button>
     </div>
-    <div class="publication-list publication-list--full">
-      {publications.map((item,index) => <Publication item={item} index={index+1}/>)}
+    <p class="publication-results" id="publication-results" aria-live="polite" aria-atomic="true">
+      {lang === 'zh' ? `显示第 1–${initialVisible} 篇，共 ${publications.length} 篇` : `Showing 1–${initialVisible} of ${publications.length} publications`}
+    </p>
+    <div class="publication-list publication-list--full" id="publication-list">
+      {publications.map((item,index) => (
+        <div class="publication-entry" data-area={item.area} hidden={index >= PAGE_SIZE}>
+          <Publication item={item} index={index+1}/>
+        </div>
+      ))}
     </div>
+    <nav class="publication-pagination" id="publication-pagination" aria-label={lang === 'zh' ? '论文翻页导航' : 'Publication pagination'} hidden={publications.length <= PAGE_SIZE}>
+      <button class="pagination-direction" type="button" id="publication-prev" disabled>{lang === 'zh' ? '← 上一页' : '← Previous'}</button>
+      <div class="pagination-pages" id="publication-page-numbers"></div>
+      <button class="pagination-direction" type="button" id="publication-next">{lang === 'zh' ? '下一页 →' : 'Next →'}</button>
+    </nav>
     <p class="publications-footnote">{t.publishedNote}</p>
   </div>
 </section>
 <script>
-  const filterButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-publication-filter]'));
-  const paperRows = Array.from(document.querySelectorAll<HTMLElement>('.publication-list--full .pub-row'));
-  for (const button of filterButtons) {
+  import { PAGE_SIZE, pageCount, normalizePage, paginate } from '../../lib/pagination.mjs';
+  const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-publication-filter]'));
+  const rows = Array.from(document.querySelectorAll<HTMLElement>('.publication-entry'));
+  const pagination = document.querySelector<HTMLElement>('#publication-pagination');
+  const pageNumbers = document.querySelector<HTMLElement>('#publication-page-numbers');
+  const results = document.querySelector<HTMLElement>('#publication-results');
+  const prev = document.querySelector<HTMLButtonElement>('#publication-prev');
+  const next = document.querySelector<HTMLButtonElement>('#publication-next');
+  const isChinese = document.documentElement.lang.startsWith('zh');
+  const validAreas = new Set(['Multimodal', 'Vision']);
+  let area = 'all';
+  let page = 1;
+
+  function readLocation() {
+    const query = new URLSearchParams(window.location.search);
+    const requestedArea = query.get('area');
+    area = requestedArea && validAreas.has(requestedArea) ? requestedArea : 'all';
+    page = Number(query.get('page') || 1);
+  }
+
+  function syncLocation() {
+    const url = new URL(window.location.href);
+    if (area === 'all') url.searchParams.delete('area');
+    else url.searchParams.set('area', area);
+    if (page === 1) url.searchParams.delete('page');
+    else url.searchParams.set('page', String(page));
+    window.history.pushState(null, '', url);
+  }
+
+  function render(updateUrl = false) {
+    const matching = rows.filter(row => area === 'all' || row.dataset.area === area);
+    page = normalizePage(page, matching.length);
+    const visible = new Set(paginate(matching, page));
+    for (const row of rows) row.hidden = !visible.has(row);
+
+    for (const button of buttons) {
+      const current = button.dataset.publicationFilter === area;
+      button.classList.toggle('is-active', current);
+      button.setAttribute('aria-pressed', String(current));
+    }
+    const count = pageCount(matching.length);
+    if (pagination) pagination.hidden = count <= 1;
+    if (prev) prev.disabled = page <= 1;
+    if (next) next.disabled = page >= count;
+    if (pageNumbers) {
+      pageNumbers.replaceChildren();
+      for (let number = 1; number <= count; number++) {
+        const control = document.createElement('button');
+        control.type = 'button';
+        control.className = 'pagination-number' + (number === page ? ' is-active' : '');
+        control.textContent = String(number);
+        control.setAttribute('aria-label', isChinese ? `第 ${number} 页` : `Page ${number}`);
+        if (number === page) control.setAttribute('aria-current', 'page');
+        control.addEventListener('click', () => switchPage(number));
+        pageNumbers.append(control);
+      }
+    }
+    const start = matching.length ? (page - 1) * PAGE_SIZE + 1 : 0;
+    const end = Math.min(page * PAGE_SIZE, matching.length);
+    if (results) results.textContent = isChinese
+      ? `显示第 ${start}–${end} 篇，共 ${matching.length} 篇`
+      : `Showing ${start}–${end} of ${matching.length} publications`;
+    if (updateUrl) syncLocation();
+  }
+
+  function switchPage(nextPage: number) {
+    if (nextPage === page) return;
+    page = nextPage;
+    render(true);
+    document.querySelector('#publication-results')?.scrollIntoView({block: 'start', behavior: 'smooth'});
+  }
+
+  for (const button of buttons) {
     button.addEventListener('click', () => {
-      const filter = button.dataset.publicationFilter;
-      for (const item of filterButtons) {
-        const active = item === button;
-        item.classList.toggle('is-active', active);
-        item.setAttribute('aria-pressed', String(active));
-      }
-      for (const row of paperRows) {
-        row.hidden = filter !== 'all' && row.dataset.area !== filter;
-      }
+      const nextArea = button.dataset.publicationFilter || 'all';
+      if (area === nextArea) return;
+      area = nextArea;
+      page = 1;
+      render(true);
     });
   }
+  prev?.addEventListener('click', () => switchPage(page - 1));
+  next?.addEventListener('click', () => switchPage(page + 1));
+  window.addEventListener('popstate', () => {readLocation(); render();});
+  readLocation();
+  render();
 </script>

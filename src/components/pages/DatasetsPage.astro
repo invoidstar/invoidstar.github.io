@@ -1,0 +1,35 @@
+---
+import type { Lang } from '../../lib/routes';
+import { datasets, strings } from '../../data/content';
+import DatasetCard from '../DatasetCard.astro';
+interface Props {lang: Lang;}
+const {lang} = Astro.props;
+const t = strings(lang);
+---
+<section class="subpage-hero">
+  <div class="shell">
+    <div class="subpage-orbit" aria-hidden="true">✦</div>
+    <p class="section-eyebrow">{t.pageDatasetEyebrow} / 03</p>
+    <h1>{t.pageDatasetTitle}<span class="page-title-dot">.</span></h1>
+    <p class="subpage-description">{t.pageDatasetIntro}</p>
+    <div class="page-divider"><span>RESEARCH DATA COLLECTION</span><span>{String(datasets.length).padStart(2,'0')} / DATASETS</span></div>
+  </div>
+</section>
+<section class="section subpage-content" aria-labelledby="datasets-title">
+  <div class="shell">
+    <div class="group-heading"><p class="section-eyebrow">01 / OVERVIEW</p><h2 id="datasets-title">{t.sectionDatasets}</h2></div>
+    <div class="dataset-grid dataset-grid--full">
+      {datasets.map((item,index) => <DatasetCard item={item} lang={lang} index={index+1}/>)}
+    </div>
+    <div class="dataset-details">
+      <p class="section-eyebrow">02 / RESEARCH NOTES</p>
+      <h2>{lang === 'zh' ? '数据集说明' : 'Dataset notes'}</h2>
+      <div class="dataset-notes-list">
+        {datasets.map(item => (
+          <div class="dataset-note"><strong>{item.name}</strong><p>{item.detail[lang]}</p></div>
+        ))}
+      </div>
+      <p class="dataset-footnote">{t.datasetInfoNote}</p>
+    </div>
+  </div>
+</section>

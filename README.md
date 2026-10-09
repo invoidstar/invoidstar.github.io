@@ -1,22 +1,33 @@
 # Qi Chu · Personal Academic Homepage
 
-A lightweight bilingual academic website and research portfolio for **Qi Chu (初琦)**.
+A bilingual academic website and research portfolio for **Qi Chu (初琦)**.
 
-**Preview:** https://invoidstar.github.io/personal-page/ (after GitHub Pages has been enabled)
+**Live development preview:** https://invoidstar.github.io/personal-page/
 
-This is a new independent site built for the `personal-page` repository. The legacy `invoidstar.github.io` and `ElysiaAILab` repositories are not modified.
+This is an independent redesign. The legacy `invoidstar.github.io` and `ElysiaAILab` repositories are not changed.
 
-## Stack
+## Site structure
 
-- [Astro](https://astro.build/) static site generation and TypeScript
-- Lightweight, dependency-free responsive CSS
-- Content stored centrally in `src/data/content.ts`
-- English at `/`, Chinese at `/zh/`
-- Automated GitHub Pages deployment via one Actions workflow
+- **Home:** complete published papers list, featured research projects, dataset collection, academic news and contact.
+- **Publications:** all confirmed published papers; client-side topic filters and 10 papers per page. When the collection has more than 10 papers, pagination automatically appears. Filters, page number, and browser back/forward are URL-aware.
+- **Projects:** research only (ElysiaRobot and VLA-Radar); no side projects or dataset cards.
+- **Datasets:** EVDB, EvCSLR, IllumSLR and EvSL, based on the previous ElysiaAILab website. Links to papers are labeled as such; missing public dataset URLs are not fabricated.
+- **About:** academic background, research experience, awards and service.
 
-## Development
+The whole website is available in English at `/` and Chinese at `/zh/`.
 
-Requires Node.js 20.11+ (Node 22 recommended).
+## Implementation
+
+- Astro, TypeScript and responsive CSS (no runtime UI framework)
+- Content data: `src/data/content.ts`
+- Reusable cards: `src/components/`
+- Pagination utility (10/page): `src/lib/pagination.mjs`
+- Original avatar: `public/assets/avatar.jpg`, copied verbatim from the former homepage
+- GitHub Pages: one build/deploy workflow in `.github/workflows/deploy.yml`
+
+## Local workflow
+
+Node 22 is recommended:
 
 ```bash
 npm install
@@ -25,30 +36,12 @@ npm run build
 npm run verify
 ```
 
-The build base path is detected from `GITHUB_REPOSITORY`:
+The `GITHUB_REPOSITORY` environment variable controls Astro's base path:
+- `invoidstar/personal-page`: `/personal-page/`
+- `invoidstar/invoidstar.github.io`: `/`
 
-- `invoidstar/personal-page` → `/personal-page/`
-- `invoidstar/invoidstar.github.io` → `/`
-- local builds → `/`
+GitHub Pages is configured to build from GitHub Actions; pushing to `main` triggers the workflow.
 
-## Publishing
+## Before final site migration
 
-In **Settings → Pages → Build and deployment**, set **Source** to **GitHub Actions** once. Every subsequent push to `main` builds and deploys the static website using `.github/workflows/deploy.yml`.
-
-## Content and assets
-
-- Research, papers, projects, awards and news: `src/data/content.ts`
-- Colors, typography and responsive layout: `src/styles/global.css`
-- Avatar: `public/assets/avatar.jpg`, copied from the existing personal homepage's `static/assets/img/photo.png` (the original file contents are JPEG)
-- Icons and social preview: `public/favicon.svg`, `public/og-cover.svg`
-
-Projects without public repositories have no broken external links. CV download is intentionally not shown until a confirmed public PDF is provided.
-
-## Pre-launch checklist
-
-- Verify information and outgoing publication links
-- Check desktop and mobile layouts
-- Review Chinese and English wording
-- Add a CV PDF if needed
-- Test and enable GitHub Pages
-- Only after acceptance: archive the old user-site repository, rename this repository to `invoidstar.github.io`, and verify the new root site
+Check the bilingual copy, publications, dataset metadata, external resources and mobile layout. A confirmed CV PDF can be added later. Rename `personal-page` only after the preview has been approved, and archive/backup the old user-page repository before any deletion.

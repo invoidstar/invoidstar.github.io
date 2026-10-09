@@ -1,0 +1,23 @@
+---
+import type { Dataset } from '../data/content';
+import type { Lang } from '../lib/routes';
+interface Props {item: Dataset; lang: Lang; index: number;}
+const {item,lang,index} = Astro.props;
+const mark=({evdb:'EV',evcslr:'EC',illumslr:'IL',evsl:'ES'} as Record<string,string>)[item.id] ?? 'DS';
+---
+<article class={'dataset-card dataset-card--' + item.id}>
+  <div class="dataset-card-header">
+    <div class={'dataset-symbol dataset-symbol--' + item.id} aria-hidden="true"><span>{mark}</span><span>✦</span></div>
+    <span class="dataset-id">{String(index).padStart(2,'0')} / DATA</span>
+  </div>
+  <p class="dataset-category">{item.category[lang]}</p>
+  <h3>{item.name}</h3>
+  <p class="dataset-full-name">{item.fullName[lang]}</p>
+  <p class="dataset-description">{item.description[lang]}</p>
+  <div class="dataset-modalities">{item.modalities.map(modality => <span>{modality}</span>)}</div>
+  <div class="dataset-links">
+    {item.links.length ? item.links.map(link => (
+      <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label} <span aria-hidden="true">↗</span></a>
+    )) : <span class="dataset-link-missing">{lang === 'zh' ? '公开资源链接待补充' : 'Public link not yet available'}</span>}
+  </div>
+</article>
