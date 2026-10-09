@@ -8,11 +8,9 @@ interface Props { lang: Lang; page: Section; }
 const { lang, page } = Astro.props;
 const t = strings(lang);
 const other: Lang = lang === 'en' ? 'zh' : 'en';
-const displayTitle = page === 'home' ? 'Qi Chu · 初琦' : t.nav[page] + ' · Qi Chu';
 const description = lang === 'en'
   ? 'Personal academic homepage of Qi Chu (初琦), Ph.D. student at UESTC. Research in embodied intelligence, vision-language-action models, and multimodal perception.'
   : '初琦的个人学术主页，电子科技大学博士研究生，研究方向包括具身智能、视觉语言动作模型和多模态感知。';
-const preview = import.meta.env.BASE_URL.includes('personal-page');
 const pageUrl = 'https://invoidstar.github.io' + route(page, lang);
 ---
 <!doctype html>
@@ -23,17 +21,30 @@ const pageUrl = 'https://invoidstar.github.io' + route(page, lang);
     <meta name="theme-color" content="#f9f8fc" />
     <meta name="description" content={description} />
     <meta name="author" content="Qi Chu" />
-    <meta name="robots" content={preview ? 'noindex,nofollow' : 'index,follow'} />
-    <title>{displayTitle} | Invoidstar</title>
+    <meta name="robots" content="index,follow" />
+    <title>Invoidstar</title>
     <link rel="icon" type="image/svg+xml" href={asset('favicon.svg')} />
     <link rel="canonical" href={pageUrl} />
     <link rel="alternate" hreflang="en" href={'https://invoidstar.github.io' + route(page, 'en')} />
     <link rel="alternate" hreflang="zh-CN" href={'https://invoidstar.github.io' + route(page, 'zh')} />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={displayTitle + ' | Invoidstar'} />
+    <meta property="og:title" content="Invoidstar" />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={'https://invoidstar.github.io' + asset('og-cover.svg')} />
     <meta property="og:url" content={pageUrl} />
+    <script is:inline>
+      // Apply the saved or system theme before first paint on every language route.
+      (() => {
+        try {
+          const saved = localStorage.getItem('invoidstar.theme');
+          const system = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.dataset.theme = saved === 'dark' || saved === 'light'
+            ? saved : (system ? 'dark' : 'light');
+        } catch {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">{lang === 'zh' ? '跳到主要内容' : 'Skip to content'}</a>
@@ -57,17 +68,37 @@ const pageUrl = 'https://invoidstar.github.io' + route(page, lang);
             <span aria-hidden="true">◎</span>{other === 'zh' ? '中文' : 'EN'}
           </a>
         </nav>
-        <details class="mobile-nav">
-          <summary aria-label={lang === 'zh' ? '打开导航' : 'Open navigation'}>
-            <span></span><span></span><span></span>
-          </summary>
-          <nav class="mobile-nav-panel" aria-label={lang === 'zh' ? '手机导航' : 'Mobile navigation'}>
-            {navOrder.map((item) => (
-              <a href={route(item, lang)} aria-current={page === item ? 'page' : undefined}>{t.nav[item]}</a>
-            ))}
-            <a href={route(page, other)} hreflang={other === 'zh' ? 'zh-CN' : 'en'}>{other === 'zh' ? '切换为中文' : 'Switch to English'}</a>
-          </nav>
-        </details>
+        <div class="header-actions">
+          <button
+            type="button"
+            class="theme-toggle"
+            data-theme-toggle
+            data-label-light={t.themeToLight}
+            data-label-dark={t.themeToDark}
+            aria-label={t.themeToDark}
+            title={t.themeToDark}
+            aria-pressed="false"
+          >
+            <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/>
+            </svg>
+            <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+            </svg>
+          </button>
+          <details class="mobile-nav">
+            <summary aria-label={lang === 'zh' ? '打开导航' : 'Open navigation'}>
+              <span></span><span></span><span></span>
+            </summary>
+            <nav class="mobile-nav-panel" aria-label={lang === 'zh' ? '手机导航' : 'Mobile navigation'}>
+              {navOrder.map((item) => (
+                <a href={route(item, lang)} aria-current={page === item ? 'page' : undefined}>{t.nav[item]}</a>
+              ))}
+              <a href={route(page, other)} hreflang={other === 'zh' ? 'zh-CN' : 'en'}>{other === 'zh' ? '切换为中文' : 'Switch to English'}</a>
+            </nav>
+          </details>
+        </div>
       </div>
     </header>
     <main id="main-content">
@@ -87,5 +118,36 @@ const pageUrl = 'https://invoidstar.github.io' + route(page, lang);
       </div>
       <div class="shell footer-bottom"><span>© {new Date().getFullYear()} Qi Chu. {t.footerRights}</span><span>INVOIDSTAR / RESEARCH & CREATE</span></div>
     </footer>
+    <script>
+      const THEME_KEY = 'invoidstar.theme';
+      const themeButton = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
+      const themeMeta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+
+      function applyTheme(theme: 'light' | 'dark') {
+        document.documentElement.dataset.theme = theme;
+        if (themeMeta) themeMeta.content = theme === 'dark' ? '#14151f' : '#fbfafc';
+        if (themeButton) {
+          const label = theme === 'dark' ? themeButton.dataset.labelLight : themeButton.dataset.labelDark;
+          themeButton.setAttribute('aria-label', label || '');
+          themeButton.setAttribute('title', label || '');
+          themeButton.setAttribute('aria-pressed', String(theme === 'dark'));
+        }
+      }
+
+      const initialTheme = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+      applyTheme(initialTheme);
+      themeButton?.addEventListener('click', () => {
+        const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        try { localStorage.setItem(THEME_KEY, next); } catch { /* local preference unavailable */ }
+        applyTheme(next);
+      });
+
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+      prefersDark.addEventListener?.('change', (event) => {
+        let hasManualPreference = false;
+        try { hasManualPreference = localStorage.getItem(THEME_KEY) !== null; } catch { /* ignore */ }
+        if (!hasManualPreference) applyTheme(event.matches ? 'dark' : 'light');
+      });
+    </script>
   </body>
 </html>

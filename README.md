@@ -1,33 +1,31 @@
-# Qi Chu · Personal Academic Homepage
+# Invoidstar · Personal Academic Homepage
 
-A bilingual academic website and research portfolio for **Qi Chu (初琦)**.
+**Official website / 正式个人主页：** **[https://invoidstar.github.io/](https://invoidstar.github.io/)**
 
-**Official homepage:** https://invoidstar.github.io/
+A bilingual academic homepage for **Qi Chu（初琦）**, covering publications, research projects, datasets, academic experience, and contact information.
 
-This repository is the official GitHub Pages user-site repository after the completed migration from `personal-page`.
+中英双语个人学术主页，展示论文、科研项目、数据集与学术经历。
 
-## Site structure
+## Pages / 页面
 
-- **Home:** complete published papers list, featured research projects, dataset collection, academic news and contact.
-- **Publications:** all confirmed published papers; client-side topic filters and 10 papers per page. When the collection has more than 10 papers, pagination automatically appears. Filters, page number, and browser back/forward are URL-aware.
-- **Projects:** research only (ElysiaRobot and VLA-Radar); no side projects or dataset cards.
-- **Datasets:** EVDB, EvCSLR, IllumSLR and EvSL, based on the previous ElysiaAILab website. Links to papers are labeled as such; missing public dataset URLs are not fabricated.
-- **About:** academic background, research experience, awards and service.
+| Page | English | 中文 |
+| --- | --- | --- |
+| Home / 首页 | [Home](https://invoidstar.github.io/) | [首页](https://invoidstar.github.io/zh/) |
+| Publications / 论文 | [Publications](https://invoidstar.github.io/publications/) | [论文发表](https://invoidstar.github.io/zh/publications/) |
+| Projects / 项目 | [Projects](https://invoidstar.github.io/projects/) | [科研项目](https://invoidstar.github.io/zh/projects/) |
+| Datasets / 数据集 | [Datasets](https://invoidstar.github.io/datasets/) | [研究数据集](https://invoidstar.github.io/zh/datasets/) |
+| About / 关于 | [About](https://invoidstar.github.io/about/) | [关于我](https://invoidstar.github.io/zh/about/) |
 
-The whole website is available in English at `/` and Chinese at `/zh/`.
+## Technology
 
-## Implementation
+- **Astro + TypeScript + responsive CSS**: static academic website.
+- **GitHub Pages only**: automatic deployment through `.github/workflows/deploy.yml` after a push to `main`; no additional hosting method.
+- **Light / dark themes**: respects system settings initially and remembers a manual choice.
+- **Bilingual content**: managed centrally in `src/data/content.ts`.
+- **Publications**: complete list on the homepage, with a dedicated filtering and 10-items-per-page view.
+- **Original portrait**: preserved in `public/assets/avatar.jpg`.
 
-- Astro, TypeScript and responsive CSS (no runtime UI framework)
-- Content data: `src/data/content.ts`
-- Reusable cards: `src/components/`
-- Pagination utility (10/page): `src/lib/pagination.mjs`
-- Original avatar: `public/assets/avatar.jpg`, copied verbatim from the former homepage
-- GitHub Pages: one build/deploy workflow in `.github/workflows/deploy.yml`
-
-## Local workflow
-
-Node 22 is recommended:
+## Local development / 本地开发
 
 ```bash
 npm install
@@ -36,14 +34,6 @@ npm run build
 npm run verify
 ```
 
-The `GITHUB_REPOSITORY` environment variable controls Astro's base path:
-- `invoidstar/personal-page`: `/personal-page/`
-- `invoidstar/invoidstar.github.io`: `/`
+Local commands are for development and verification only. **The public website is deployed exclusively through GitHub Pages.**
 
-GitHub Pages is configured to build from GitHub Actions; pushing to `main` triggers the workflow. The official repository name `invoidstar.github.io` uses `/` as the base path.
-
-## Maintenance
-
-Update research records in `src/data/content.ts`. Check bilingual copy, publications, dataset metadata, and outgoing links after changes. A CV PDF may be added later when available.
-
-The original `personal-page` repository has been renamed to `invoidstar.github.io`, and GitHub Pages is published from the root URL.
+科研内容请编辑 `src/data/content.ts`；外观与移动端样式请编辑 `src/styles/global.css`。无需服务器、第三方部署服务或手工上传构建结果。

@@ -199,16 +199,16 @@ export const datasets: Dataset[] = [
 
 export const researchAreas = [
   {id:'01', title:{en:'Embodied Intelligence',zh:'具身智能'}, description:{
-    en:'Vision-language-action models, robot policy learning, and model safety.',
-    zh:'视觉语言动作模型、机器人策略学习与模型安全。'
+    en:'Vision-language-action policy training and adaptation, robot manipulation, safety and robustness evaluation, and action-conditioned modeling of how the world changes.',
+    zh:'研究视觉语言动作模型的训练与适配、机器人操作，以及模型安全性与鲁棒性评测；探索动作条件下的环境变化建模。'
   }, tags:['VLA','Robot Learning','World Models']},
   {id:'02', title:{en:'Multimodal Perception',zh:'多模态感知'}, description:{
-    en:'Vision-language learning, sign language understanding, and image restoration.',
-    zh:'视觉语言学习、手语理解，以及图像复原。'
+    en:'Multimodal representation learning across images, language, events, and motion, with applications to sign language recognition and translation, visual understanding, and image restoration.',
+    zh:'面向图像、语言、事件流与运动信息的多模态表征学习，研究手语识别与翻译、视觉理解以及图像复原等任务。'
   }, tags:['Vision-Language','Sign Language','Event Vision']},
   {id:'03', title:{en:'Research Systems',zh:'科研系统与基准'}, description:{
-    en:'Reusable training frameworks, benchmark evaluation, and open research resources.',
-    zh:'可复用训练框架、基准评测与开放研究资源。'
+    en:'Developing reusable training and evaluation infrastructure, curating datasets and benchmarks, and organizing evidence-driven comparisons to improve research reproducibility.',
+    zh:'构建可复用的训练与评测基础设施，整理数据集与基准设置，并通过规范化的实验对比和研究资料组织提升可复现性。'
   }, tags:['Frameworks','Datasets','Reproducibility']},
 ];
 
@@ -240,18 +240,16 @@ export const copy = {
     heroIntro: 'I am a Ph.D. student in Computer Science and Technology at the University of Electronic Science and Technology of China (UESTC). My research interests span embodied intelligence, multimodal learning, and practical AI research systems.',
     heroPrimary: 'Explore my research',
     heroSecondary: 'Get in touch',
-    heroPosition: 'Ph.D. STUDENT · UESTC',
     heroImgCaption: 'A LITTLE BIT OF ELYSIA',
     heroSide: 'RESEARCH / 2026',
-    microUniversity: 'University of Electronic Science and Technology of China',
     sectionResearch: 'Research interests',
     researchSubtitle: 'Connecting intelligent perception, purposeful actions, and the systems that make research reproducible.',
     sectionPubs: 'Publications',
-    pubsSubtitle: 'All published journal and conference papers, with a dedicated searchable archive.',
+    pubsSubtitle: 'Published journal and conference papers, with a separate archive for filtering and pagination.',
     sectionProjects: 'Research projects',
     projectsSubtitle: 'Research frameworks and open scientific resources that support reproducible AI research.',
-    sectionNews: 'Recent notes',
-    newsSubtitle: 'A few updates along the way.',
+    sectionNews: 'Recent updates',
+    newsSubtitle: 'Selected milestones from my research and academic journey.',
     sectionReach: 'Let’s connect.',
     reachIntro: 'Open to academic conversations, thoughtful collaborations, and interesting ideas.',
     reachBtn: 'Send an email',
@@ -289,6 +287,14 @@ export const copy = {
     uestc: 'University of Electronic Science and Technology of China',
     jlu: 'Jilin University',
     experienceLine: 'Embodied intelligence algorithm research and development',
+    experiencePeriod: 'Jun 2026 — Present',
+    snapshotTitle: 'Academic profile',
+    snapshotSubtitle: 'A brief introduction to my current academic work and experience.',
+    snapshotStudy: 'Current studies',
+    snapshotExperience: 'Research experience',
+    snapshotService: 'Academic service',
+    themeToLight: 'Switch to light mode',
+    themeToDark: 'Switch to dark mode',
     serviceLine: 'Reviewer for AAAI, IEEE Transactions on Multimedia, and IEEE Transactions on Industrial Informatics.',
     filterAll: 'All',
     filterMultimodal: 'Multimodal',
@@ -312,18 +318,16 @@ export const copy = {
     heroIntro: '目前就读于电子科技大学，攻读计算机科学与技术博士学位。主要关注具身智能、多模态学习，以及支持可复现研究的 AI 系统与科研基础设施。',
     heroPrimary: '探索研究方向',
     heroSecondary: '与我联系',
-    heroPosition: '博士研究生 · 电子科技大学',
     heroImgCaption: 'A LITTLE BIT OF ELYSIA',
     heroSide: '研究 / 2026',
-    microUniversity: '电子科技大学 · University of Electronic Science and Technology of China',
     sectionResearch: '研究方向',
     researchSubtitle: '连接多模态感知、具身行动与可复用的科研系统。',
     sectionPubs: '论文发表',
-    pubsSubtitle: '展示全部已发表论文，独立页面支持方向筛选与每页 10 篇分页浏览。',
+    pubsSubtitle: '按时间整理正式发表成果，独立论文页面支持方向筛选与分页浏览。'
     sectionProjects: '科研项目',
     projectsSubtitle: '用于具身智能研究与可复现科研实践的框架和开放知识资源。',
     sectionNews: '近期动态',
-    newsSubtitle: '研究道路上的一些记录。',
+    newsSubtitle: '记录研究进展与学术经历中的重要节点。'
     sectionReach: '保持联系。',
     reachIntro: '欢迎学术交流、研究合作与有趣的想法。',
     reachBtn: '发送邮件',
@@ -361,6 +365,14 @@ export const copy = {
     uestc: '电子科技大学',
     jlu: '吉林大学',
     experienceLine: '具身智能相关算法研发',
+    experiencePeriod: '2026.06 — 至今',
+    snapshotTitle: '学术简介',
+    snapshotSubtitle: '概览当前的学术阶段、研究经历和学术服务。',
+    snapshotStudy: '当前学习',
+    snapshotExperience: '研究经历',
+    snapshotService: '学术服务',
+    themeToLight: '切换为日间模式',
+    themeToDark: '切换为夜间模式',
     serviceLine: '曾担任 AAAI、IEEE Transactions on Multimedia 和 IEEE Transactions on Industrial Informatics 审稿人。',
     filterAll: '全部',
     filterMultimodal: '多模态',
