@@ -323,11 +323,11 @@ export const copy = {
     sectionResearch: '研究方向',
     researchSubtitle: '连接多模态感知、具身行动与可复用的科研系统。',
     sectionPubs: '论文发表',
-    pubsSubtitle: '按时间整理正式发表成果，独立论文页面支持方向筛选与分页浏览。'
+    pubsSubtitle: '按时间整理正式发表成果，独立论文页面支持方向筛选与分页浏览。',
     sectionProjects: '科研项目',
     projectsSubtitle: '用于具身智能研究与可复现科研实践的框架和开放知识资源。',
     sectionNews: '近期动态',
-    newsSubtitle: '记录研究进展与学术经历中的重要节点。'
+    newsSubtitle: '记录研究进展与学术经历中的重要节点。',
     sectionReach: '保持联系。',
     reachIntro: '欢迎学术交流、研究合作与有趣的想法。',
     reachBtn: '发送邮件',
