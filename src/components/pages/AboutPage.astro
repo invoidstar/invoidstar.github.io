@@ -1,0 +1,60 @@
+---
+import type { Lang } from '../../lib/routes';
+import { asset, route } from '../../lib/routes';
+import { strings, email, awards, researchAreas } from '../../data/content';
+interface Props {lang: Lang;}
+const {lang} = Astro.props;
+const t = strings(lang);
+---
+<section class="subpage-hero">
+  <div class="shell">
+    <div class="subpage-orbit" aria-hidden="true">✦</div>
+    <p class="section-eyebrow">{t.pageAboutEyebrow} / 03</p>
+    <h1>{t.pageAboutTitle}<span class="page-title-dot">.</span></h1>
+    <p class="subpage-description">{t.pageAboutIntro}</p>
+    <div class="page-divider"><span>CURIOUS BY NATURE</span><span>QI CHU / INVOIDSTAR</span></div>
+  </div>
+</section>
+<section class="section subpage-content">
+  <div class="shell about-layout">
+    <aside class="about-aside">
+      <div class="about-avatar"><img src={asset('assets/avatar.jpg')} alt={lang === 'zh' ? '旧主页的插画头像' : 'Illustrated avatar'} loading="lazy" width="716" height="730"/></div>
+      <h2>Qi Chu <span>初琦</span></h2>
+      <p>{t.educationCurrent}</p>
+      <a href={'mailto:' + email} class="about-contact-link">{email} ↗</a>
+      <a href="https://github.com/invoidstar" class="about-contact-link" target="_blank" rel="noopener noreferrer">github.com/invoidstar ↗</a>
+    </aside>
+    <div class="about-main">
+      <section class="about-block">
+        <p class="section-eyebrow">01 / INTRODUCTION</p>
+        <h2>{t.pageAboutTitle}</h2>
+        <p class="about-bio">{t.aboutBio}</p>
+        <div class="about-keywords">{researchAreas.map(area => <span>{area.title[lang]}</span>)}</div>
+      </section>
+      <section class="about-block">
+        <p class="section-eyebrow">02 / EDUCATION</p>
+        <h2>{t.education}</h2>
+        <div class="timeline">
+          <div class="timeline-item"><span class="timeline-period">{t.currentLabel}</span><div><h3>{t.educationCurrent}</h3><p>{t.uestc}</p></div></div>
+          <div class="timeline-item"><span class="timeline-period">{t.previousLabel}</span><div><h3>{t.educationPrevious}</h3><p>{t.jlu}</p></div></div>
+        </div>
+      </section>
+      <section class="about-block">
+        <p class="section-eyebrow">03 / EXPERIENCE</p>
+        <h2>{t.experience}</h2>
+        <div class="timeline"><div class="timeline-item"><span class="timeline-period">2026.06 — 2026.09</span><div><h3>ZIONEER</h3><p>{t.experienceLine}</p></div></div></div>
+      </section>
+      <section class="about-block">
+        <p class="section-eyebrow">04 / HONORS</p>
+        <h2>{t.honors}</h2>
+        <div class="awards-list">{awards.map(a => <div class="award-item"><span>{a.date}</span><p>{a[lang]}</p></div>)}</div>
+      </section>
+      <section class="about-block">
+        <p class="section-eyebrow">05 / SERVICE</p>
+        <h2>{t.service}</h2>
+        <p class="about-bio about-bio--small">{t.serviceLine}</p>
+      </section>
+      <a class="button button-outline" href={route('home',lang)}><span aria-hidden="true">←</span> {t.returnHome}</a>
+    </div>
+  </div>
+</section>

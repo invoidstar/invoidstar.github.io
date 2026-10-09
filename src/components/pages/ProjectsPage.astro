@@ -1,0 +1,25 @@
+---
+import type { Lang } from '../../lib/routes';
+import { projects, strings } from '../../data/content';
+import ProjectCard from '../ProjectCard.astro';
+interface Props {lang: Lang;}
+const {lang} = Astro.props;
+const t = strings(lang);
+---
+<section class="subpage-hero">
+  <div class="shell">
+    <div class="subpage-orbit" aria-hidden="true">✳</div>
+    <p class="section-eyebrow">{t.pageProjectEyebrow} / 02</p>
+    <h1>{t.pageProjectTitle}<span class="page-title-dot">.</span></h1>
+    <p class="subpage-description">{t.pageProjectIntro}</p>
+    <div class="page-divider"><span>THINGS I BUILD</span><span>RESEARCH & CREATE</span></div>
+  </div>
+</section>
+<section class="section subpage-content">
+  <div class="shell">
+    <div class="group-heading"><p class="section-eyebrow">01 / RESEARCH</p><h2>{t.researchProjects}</h2></div>
+    <div class="project-grid project-grid--full">{projects.filter(p => p.category === 'research').map(item => <ProjectCard item={item} lang={lang}/>)}</div>
+    <div class="group-heading group-heading--spaced"><p class="section-eyebrow">02 / SIDE PROJECTS</p><h2>{t.sideProjects}</h2></div>
+    <div class="project-grid project-grid--full">{projects.filter(p => p.category === 'tools').map(item => <ProjectCard item={item} lang={lang}/>)}</div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+---
+import type { Publication } from '../data/content';
+interface Props { item: Publication; index: number; compact?: boolean; }
+const { item, index, compact = false } = Astro.props;
+const parts = item.authors.split(/(Qi Chu)/g);
+---
+<article class:list={['pub-row', compact && 'pub-row--compact']} data-area={item.area}>
+  <div class="pub-index" aria-hidden="true">{String(index).padStart(2, '0')}</div>
+  <div class="pub-content">
+    <div class="pub-topline"><span class="pub-year">{item.year}</span><span class="pub-dot" aria-hidden="true"></span><span class="pub-category">{item.venueShort}</span></div>
+    <h3 class="pub-title">{item.title}</h3>
+    <p class="pub-authors">{parts.map((part) => part === 'Qi Chu' ? <strong>{part}</strong> : part)}</p>
+    <p class="pub-venue">{item.venue}</p>
+    <div class="pub-actions">
+      {item.links.map((link) => (
+        <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}<span aria-hidden="true">↗</span></a>
+      ))}
+    </div>
+  </div>
+</article>

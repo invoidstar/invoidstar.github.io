@@ -1,0 +1,16 @@
+---
+import type { Lang, Section } from '../lib/routes';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Home from './pages/Home.astro';
+import PublicationsPage from './pages/PublicationsPage.astro';
+import ProjectsPage from './pages/ProjectsPage.astro';
+import AboutPage from './pages/AboutPage.astro';
+interface Props {lang: Lang; page: Section;}
+const {lang,page} = Astro.props;
+---
+<BaseLayout lang={lang} page={page}>
+  {page === 'home' && <Home lang={lang}/>}
+  {page === 'publications' && <PublicationsPage lang={lang}/>}
+  {page === 'projects' && <ProjectsPage lang={lang}/>}
+  {page === 'about' && <AboutPage lang={lang}/>}
+</BaseLayout>

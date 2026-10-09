@@ -1,0 +1,47 @@
+---
+import type { Lang } from '../../lib/routes';
+import { publications, strings } from '../../data/content';
+import Publication from '../Publication.astro';
+interface Props {lang: Lang;}
+const {lang} = Astro.props;
+const t = strings(lang);
+---
+<section class="subpage-hero">
+  <div class="shell">
+    <div class="subpage-orbit" aria-hidden="true">✧</div>
+    <p class="section-eyebrow">{t.pagePubEyebrow} / 01</p>
+    <h1>{t.pagePubTitle}<span class="page-title-dot">.</span></h1>
+    <p class="subpage-description">{t.pagePubIntro}</p>
+    <div class="page-divider"><span>RESEARCH ARCHIVE</span><span>2024 — {new Date().getFullYear()}</span></div>
+  </div>
+</section>
+<section class="section subpage-content">
+  <div class="shell">
+    <div class="filter-bar" role="group" aria-label={lang === 'zh' ? '论文方向筛选' : 'Publication topic filter'}>
+      <button type="button" class="filter-button is-active" data-publication-filter="all" aria-pressed="true">{t.filterAll} <span>{publications.length}</span></button>
+      <button type="button" class="filter-button" data-publication-filter="Multimodal" aria-pressed="false">{t.filterMultimodal}</button>
+      <button type="button" class="filter-button" data-publication-filter="Vision" aria-pressed="false">{t.filterVision}</button>
+    </div>
+    <div class="publication-list publication-list--full">
+      {publications.map((item,index) => <Publication item={item} index={index+1}/>)}
+    </div>
+    <p class="publications-footnote">{t.publishedNote}</p>
+  </div>
+</section>
+<script>
+  const filterButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-publication-filter]'));
+  const paperRows = Array.from(document.querySelectorAll<HTMLElement>('.publication-list--full .pub-row'));
+  for (const button of filterButtons) {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.publicationFilter;
+      for (const item of filterButtons) {
+        const active = item === button;
+        item.classList.toggle('is-active', active);
+        item.setAttribute('aria-pressed', String(active));
+      }
+      for (const row of paperRows) {
+        row.hidden = filter !== 'all' && row.dataset.area !== filter;
+      }
+    });
+  }
+</script>

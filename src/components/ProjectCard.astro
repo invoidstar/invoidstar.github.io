@@ -1,0 +1,28 @@
+---
+import type { Project } from '../data/content';
+import type { Lang } from '../lib/routes';
+interface Props { item: Project; lang: Lang; }
+const {item, lang} = Astro.props;
+const mark = ({elysia:'ER',radar:'VR',iislu:'IS',matcher:'CM'} as Record<string,string>)[item.id] || '✧';
+---
+<article class="project-card">
+  <div class={'project-cover project-cover--' + item.id} aria-hidden="true">
+    <div class="project-cover-orbit"></div>
+    <div class="project-cover-top"><span>INVOIDSTAR / WORKS</span><span>0{item.id === 'elysia' ? '1' : item.id === 'radar' ? '2' : item.id === 'iislu' ? '3' : '4'}</span></div>
+    <span class="project-cover-mark">{mark}</span>
+    <div class="project-cover-bottom"><span>✳</span><span>RESEARCH & CREATE</span></div>
+  </div>
+  <div class="project-copy">
+    <p class="project-type">{item.type[lang]}</p>
+    <h3>{item.name}</h3>
+    <p class="project-subtitle">{item.subtitle[lang]}</p>
+    <p class="project-description">{item.description[lang]}</p>
+    <div class="tag-list">{item.tags.map(tag => <span>{tag}</span>)}</div>
+    <div class="project-card-footer">
+      {item.links.length > 0 ? (
+        <div class="project-card-links">{item.links.map(link => <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label} <span aria-hidden="true">↗</span></a>)}</div>
+      ) : <span class="project-coming">{lang === 'zh' ? '内容陆续公开' : 'More to share soon'}</span>}
+      <span class="project-corner" aria-hidden="true">✧</span>
+    </div>
+  </div>
+</article>

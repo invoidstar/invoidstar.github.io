@@ -1,0 +1,91 @@
+---
+import '../styles/global.css';
+import { route, asset } from '../lib/routes';
+import type { Lang, Section } from '../lib/routes';
+import { strings, navOrder, email } from '../data/content';
+
+interface Props { lang: Lang; page: Section; }
+const { lang, page } = Astro.props;
+const t = strings(lang);
+const other: Lang = lang === 'en' ? 'zh' : 'en';
+const displayTitle = page === 'home' ? 'Qi Chu · 初琦' : t.nav[page] + ' · Qi Chu';
+const description = lang === 'en'
+  ? 'Personal academic homepage of Qi Chu (初琦), Ph.D. student at UESTC. Research in embodied intelligence, vision-language-action models, and multimodal perception.'
+  : '初琦的个人学术主页，电子科技大学博士研究生，研究方向包括具身智能、视觉语言动作模型和多模态感知。';
+const preview = import.meta.env.BASE_URL.includes('personal-page');
+const pageUrl = 'https://invoidstar.github.io' + route(page, lang);
+---
+<!doctype html>
+<html lang={lang === 'zh' ? 'zh-CN' : 'en'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f9f8fc" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Qi Chu" />
+    <meta name="robots" content={preview ? 'noindex,nofollow' : 'index,follow'} />
+    <title>{displayTitle} | Invoidstar</title>
+    <link rel="icon" type="image/svg+xml" href={asset('favicon.svg')} />
+    <link rel="canonical" href={pageUrl} />
+    <link rel="alternate" hreflang="en" href={'https://invoidstar.github.io' + route(page, 'en')} />
+    <link rel="alternate" hreflang="zh-CN" href={'https://invoidstar.github.io' + route(page, 'zh')} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={displayTitle + ' | Invoidstar'} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={'https://invoidstar.github.io' + asset('og-cover.svg')} />
+    <meta property="og:url" content={pageUrl} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">{lang === 'zh' ? '跳到主要内容' : 'Skip to content'}</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href={route('home', lang)} aria-label="Invoidstar homepage">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 44 44" fill="none">
+              <path d="M22 3.5 27.8 16.2 40.5 22 27.8 27.8 22 40.5 16.2 27.8 3.5 22 16.2 16.2Z" stroke="currentColor" stroke-width="1.5" />
+              <circle cx="22" cy="22" r="3.1" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="brand-words"><strong>invoidstar<span class="brand-period">.</span></strong><small>{t.brandCaption}</small></span>
+        </a>
+        <nav class="desktop-nav" aria-label={lang === 'zh' ? '主导航' : 'Main navigation'}>
+          {navOrder.map((item) => (
+            <a href={route(item, lang)} class:list={['nav-link', page === item && 'is-current']} aria-current={page === item ? 'page' : undefined}>{t.nav[item]}</a>
+          ))}
+          <span class="nav-separator" aria-hidden="true"></span>
+          <a class="language-link" href={route(page, other)} hreflang={other === 'zh' ? 'zh-CN' : 'en'}>
+            <span aria-hidden="true">◎</span>{other === 'zh' ? '中文' : 'EN'}
+          </a>
+        </nav>
+        <details class="mobile-nav">
+          <summary aria-label={lang === 'zh' ? '打开导航' : 'Open navigation'}>
+            <span></span><span></span><span></span>
+          </summary>
+          <nav class="mobile-nav-panel" aria-label={lang === 'zh' ? '手机导航' : 'Mobile navigation'}>
+            {navOrder.map((item) => (
+              <a href={route(item, lang)} aria-current={page === item ? 'page' : undefined}>{t.nav[item]}</a>
+            ))}
+            <a href={route(page, other)} hreflang={other === 'zh' ? 'zh-CN' : 'en'}>{other === 'zh' ? '切换为中文' : 'Switch to English'}</a>
+          </nav>
+        </details>
+      </div>
+    </header>
+    <main id="main-content">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <div class="footer-identity">
+          <span class="footer-star" aria-hidden="true">✧</span>
+          <div><strong>Qi Chu <span>· 初琦</span></strong><p>{t.footerNote}</p></div>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/invoidstar" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href={'mailto:' + email}>{t.emailLabel} ↗</a>
+          <a href="#main-content">{lang === 'zh' ? '返回顶部 ↑' : 'Back to top ↑'}</a>
+        </div>
+      </div>
+      <div class="shell footer-bottom"><span>© {new Date().getFullYear()} Qi Chu. {t.footerRights}</span><span>INVOIDSTAR / RESEARCH & CREATE</span></div>
+    </footer>
+  </body>
+</html>
