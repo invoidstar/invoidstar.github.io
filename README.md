@@ -2,9 +2,9 @@
 
 A bilingual academic website and research portfolio for **Qi Chu (初琦)**.
 
-**Live development preview:** https://invoidstar.github.io/personal-page/
+**Official homepage:** https://invoidstar.github.io/
 
-This is an independent redesign. The legacy `invoidstar.github.io` and `ElysiaAILab` repositories are not changed.
+This repository is the official GitHub Pages user-site repository after the completed migration from `personal-page`.
 
 ## Site structure
 
@@ -40,8 +40,10 @@ The `GITHUB_REPOSITORY` environment variable controls Astro's base path:
 - `invoidstar/personal-page`: `/personal-page/`
 - `invoidstar/invoidstar.github.io`: `/`
 
-GitHub Pages is configured to build from GitHub Actions; pushing to `main` triggers the workflow.
+GitHub Pages is configured to build from GitHub Actions; pushing to `main` triggers the workflow. The official repository name `invoidstar.github.io` uses `/` as the base path.
 
-## Before final site migration
+## Maintenance
 
-Check the bilingual copy, publications, dataset metadata, external resources and mobile layout. A confirmed CV PDF can be added later. Rename `personal-page` only after the preview has been approved, and archive/backup the old user-page repository before any deletion.
+Update research records in `src/data/content.ts`. Check bilingual copy, publications, dataset metadata, and outgoing links after changes. A CV PDF may be added later when available.
+
+The original `personal-page` repository has been renamed to `invoidstar.github.io`, and GitHub Pages is published from the root URL.
