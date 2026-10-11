@@ -23,6 +23,7 @@ A bilingual academic homepage for **Qi Chu（初琦）**, covering publications,
 - **Light / dark themes**: respects system settings initially and remembers a manual choice.
 - **Bilingual content**: managed centrally in `src/data/content.ts`.
 - **Publications**: complete list on the homepage, with a dedicated filtering and 10-items-per-page view.
+- **Research projects**: ElysiaRobot, ElysiaCV and VLA-Radar.
 - **Original portrait**: preserved in `public/assets/avatar.jpg`.
 
 ## Local development / 本地开发

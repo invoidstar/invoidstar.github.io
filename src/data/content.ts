@@ -113,6 +113,20 @@ export const projects: Project[] = [
     tags: ['VLA', 'Robot Learning', 'Evaluation'], links: [],
   },
   {
+    id: 'elysiacv', name: 'ElysiaCV', category: 'research', featured: true,
+    type: {en: 'COMPUTER VISION INFRASTRUCTURE', zh: '计算机视觉训练基础设施'},
+    subtitle: {
+      en: 'A unified framework for computer vision research.',
+      zh: '面向计算机视觉研究的统一训练框架。',
+    },
+    description: {
+      en: 'A plugin-based training framework for image classification, object detection, and semantic segmentation, with unified configuration, data pipelines, and training workflows.',
+      zh: '面向图像分类、目标检测和语义分割的插件化科研框架，统一模型配置、数据处理流程以及模型训练与评测工作流。',
+    },
+    tags: ['Classification', 'Detection', 'Segmentation'],
+    links: [{label: 'GitHub', url: 'https://github.com/invoidstar/ElysiaCV'}],
+  },
+  {
     id: 'radar', name: 'VLA-Radar', category: 'research', featured: true,
     type: {en: 'OPEN RESEARCH RESOURCE', zh: '开放科研知识平台'},
     subtitle: {en: 'A living map of vision-language-action research.', zh: '持续更新的视觉语言动作领域研究地图。'},

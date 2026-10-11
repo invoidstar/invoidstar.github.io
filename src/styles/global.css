@@ -666,3 +666,17 @@ html[data-theme="dark"] .award-item p{color:#c5bacc}
 @media(prefers-reduced-motion:reduce){
  .theme-toggle{transition:none}
 }
+
+
+/* ElysiaCV: distinct CV research infrastructure cover */
+.project-cover--elysiacv{background:linear-gradient(135deg,#e3f0ec,#eaf3f1 55%,#f1eff9);color:#69978e}
+html[data-theme="dark"] .project-cover--elysiacv{background:linear-gradient(135deg,#243d3a,#273b41 58%,#322f48);color:#9ed0c6}
+
+/* Balanced three-project composition on homepage and projects page */
+.project-grid--research,.project-grid--full{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:900px){
+ .project-grid--research,.project-grid--full{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:620px){
+ .project-grid--research,.project-grid--full{grid-template-columns:minmax(0,1fr)}
+}

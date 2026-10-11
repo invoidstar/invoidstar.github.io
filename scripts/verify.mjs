@@ -31,7 +31,10 @@ for (const locale of ['', 'zh/']) {
     assert.ok(home.includes(name) && datasets.includes(name), 'Missing dataset: ' + name);
   }
   assert.ok(!projects.includes('Color Matcher') && !projects.includes('IISLU'), 'Unwanted non-research project');
-  assert.ok(projects.includes('ElysiaRobot') && projects.includes('VLA-Radar'), 'Missing research project');
+  assert.ok(projects.includes('ElysiaRobot') && projects.includes('VLA-Radar') && projects.includes('ElysiaCV'), 'Missing research project');
+  assert.ok(home.includes('ElysiaCV'), 'ElysiaCV absent from homepage');
+  assert.ok(projects.includes('https://github.com/invoidstar/ElysiaCV') && home.includes('https://github.com/invoidstar/ElysiaCV'), 'ElysiaCV repository link missing');
+  assert.ok(home.includes('Classification') && home.includes('Detection') && home.includes('Segmentation'), 'ElysiaCV task tags missing');
   assert.ok(pubs.includes('publication-pagination'), 'Missing pagination controls');
 
   const sections = ['01 / RESEARCH','02 / UPDATES','03 / PUBLICATIONS','04 / PROJECTS','05 / DATASETS','06 / PROFILE'];
@@ -80,4 +83,4 @@ assert.ok(readme.includes('[https://invoidstar.github.io/](https://invoidstar.gi
 assert.ok(!readme.includes('/personal-page/'), 'Old preview URL remains in README');
 assert.ok(readme.includes('GitHub Pages only'), 'README does not specify GitHub Pages-only deployment');
 
-console.log('PASS: 10 localized pages; site title and root URLs; themes; 6 reordered sections; longer research summaries; About/ZIONEER bilingual dates; 10/page pagination; research projects and 4 datasets.');
+console.log('PASS: 10 localized pages; site title and root URLs; themes; 6 reordered sections; longer research summaries; About/ZIONEER bilingual dates; 10/page pagination; three research projects including ElysiaCV and 4 datasets.');
