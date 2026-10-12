@@ -32,6 +32,11 @@ for (const locale of ['', 'zh/']) {
   }
   assert.ok(!projects.includes('Color Matcher') && !projects.includes('IISLU'), 'Unwanted non-research project');
   assert.ok(projects.includes('ElysiaRobot') && projects.includes('VLA-Radar') && projects.includes('ElysiaCV'), 'Missing research project');
+  assert.ok(projects.includes('ElysiaTools') && home.includes('ElysiaTools'), 'ElysiaTools must appear in both languages and pages');
+  for (const url of ['https://github.com/invoidstar/ElysiaTools', 'https://invoidstar.github.io/ElysiaTools/']) {
+    assert.ok(projects.includes(url) && home.includes(url), 'ElysiaTools link missing: ' + url);
+  }
+  assert.ok(projects.includes('Conferences') && projects.includes('Journals') && projects.includes('Deadlines'), 'ElysiaTools features missing');
   assert.ok(home.includes('ElysiaCV'), 'ElysiaCV absent from homepage');
   assert.ok(projects.includes('https://github.com/invoidstar/ElysiaCV') && home.includes('https://github.com/invoidstar/ElysiaCV'), 'ElysiaCV repository link missing');
   assert.ok(home.includes('Classification') && home.includes('Detection') && home.includes('Segmentation'), 'ElysiaCV task tags missing');
@@ -83,4 +88,4 @@ assert.ok(readme.includes('[https://invoidstar.github.io/](https://invoidstar.gi
 assert.ok(!readme.includes('/personal-page/'), 'Old preview URL remains in README');
 assert.ok(readme.includes('GitHub Pages only'), 'README does not specify GitHub Pages-only deployment');
 
-console.log('PASS: 10 localized pages; site title and root URLs; themes; 6 reordered sections; longer research summaries; About/ZIONEER bilingual dates; 10/page pagination; three research projects including ElysiaCV and 4 datasets.');
+console.log('PASS: 10 localized pages; site title and root URLs; themes; 6 reordered sections; longer research summaries; About/ZIONEER bilingual dates; 10/page pagination; four research projects including ElysiaTools and 4 datasets.');

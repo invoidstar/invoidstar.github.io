@@ -137,6 +137,23 @@ export const projects: Project[] = [
     tags: ['VLA', 'Literature', 'Benchmark'],
     links: [{label:'Website',url:'https://invoidstar.github.io/VLA-Radar/'},{label:'GitHub',url:'https://github.com/invoidstar/VLA-Radar'}],
   },
+  {
+    id: 'elysiatools', name: 'ElysiaTools', category: 'research', featured: true,
+    type: {en: 'ACADEMIC RESEARCH TOOLKIT', zh: '学术科研工具平台'},
+    subtitle: {
+      en: 'Find venues, track deadlines, and organize academic work.',
+      zh: '查询会议期刊、追踪截稿日期、整理科研信息。',
+    },
+    description: {
+      en: 'An open-source toolkit for academic research, featuring conference and journal explorers, submission-deadline calendars, personal collections, and lightweight research utilities.',
+      zh: '开源科研辅助平台，集成学术会议与期刊查询、投稿截稿日历、个人关注收藏及轻量科研工具。',
+    },
+    tags: ['Conferences', 'Journals', 'Deadlines'],
+    links: [
+      {label:'Website',url:'https://invoidstar.github.io/ElysiaTools/'},
+      {label:'GitHub',url:'https://github.com/invoidstar/ElysiaTools'},
+    ],
+  },
 
 ];
 

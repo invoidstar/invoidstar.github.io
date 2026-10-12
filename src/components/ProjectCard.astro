@@ -3,8 +3,8 @@ import type { Project } from '../data/content';
 import type { Lang } from '../lib/routes';
 interface Props { item: Project; lang: Lang; }
 const {item, lang} = Astro.props;
-const mark = ({elysia:'ER',elysiacv:'CV',radar:'VR'} as Record<string,string>)[item.id] || '✧';
-const number = ({elysia:'01',elysiacv:'02',radar:'03'} as Record<string,string>)[item.id] || '—';
+const mark = ({elysia:'ER',elysiacv:'CV',radar:'VR',elysiatools:'ET'} as Record<string,string>)[item.id] || '✧';
+const number = ({elysia:'01',elysiacv:'02',radar:'03',elysiatools:'04'} as Record<string,string>)[item.id] || '—';
 ---
 <article class="project-card">
   <div class={'project-cover project-cover--' + item.id} aria-hidden="true">

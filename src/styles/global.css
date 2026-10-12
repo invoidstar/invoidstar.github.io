@@ -680,3 +680,11 @@ html[data-theme="dark"] .project-cover--elysiacv{background:linear-gradient(135d
 @media(max-width:620px){
  .project-grid--research,.project-grid--full{grid-template-columns:minmax(0,1fr)}
 }
+
+/* ElysiaTools and a balanced four-project grid */
+.project-cover--elysiatools{background:linear-gradient(135deg,#f8eae9,#f9f0e9 56%,#f4eafb);color:#af7c8e}
+html[data-theme="dark"] .project-cover--elysiatools{background:linear-gradient(135deg,#493140,#45343b 60%,#342d4a);color:#e1a9c3}
+.project-grid--research,.project-grid--full{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:620px){
+  .project-grid--research,.project-grid--full{grid-template-columns:minmax(0,1fr)}
+}
