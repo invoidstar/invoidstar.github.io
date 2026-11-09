@@ -4,8 +4,12 @@ import type { Lang } from '../lib/routes';
 interface Props { item: Publication; index: number; compact?: boolean; lang: Lang; }
 const { item, index, compact = false, lang } = Astro.props;
 const parts = item.authors?.split(/(Qi Chu)/g) ?? [];
-const acceptedText = item.acceptedDate
-  ? `${lang === 'zh' ? '已录用' : 'Accepted'} · ${item.acceptedDate}`
+const acceptedDateText = item.acceptedDate
+  ? (lang === 'zh'
+      ? item.acceptedDate.replaceAll('-', '.')
+      : new Date(`${item.acceptedDate}T00:00:00Z`).toLocaleDateString('en-US', {
+          year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'
+        }))
   : null;
 ---
 <article class:list={['pub-row', compact && 'pub-row--compact']} data-area={item.area}>
@@ -15,7 +19,7 @@ const acceptedText = item.acceptedDate
     <h3 class="pub-title">{item.title}</h3>
     {item.authors && <p class="pub-authors">{parts.map((part) => part === 'Qi Chu' ? <strong>{part}</strong> : part)}</p>}
     <p class="pub-venue">{item.venue}</p>
-    {acceptedText && <p class="pub-accepted">{acceptedText}</p>}
+    {acceptedDateText && <p class="pub-accepted">{lang === 'zh' ? '已录用' : 'Accepted'} · <time datetime={item.acceptedDate}>{acceptedDateText}</time></p>}
     {item.links.length > 0 && <div class="pub-actions">
       {item.links.map((link) => (
         <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}<span aria-hidden="true">↗</span></a>

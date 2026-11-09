@@ -47,6 +47,11 @@ for (const locale of ['', 'zh/']) {
   assert.ok(home.includes(oldTitle) && pubs.includes(oldTitle), 'AAAI HyperSign paper must be retained');
   assert.ok(home.includes('Pattern Recognition') && pubs.includes('Pattern Recognition'), 'PR journal missing');
   assert.ok(home.includes('2026-11-08') && pubs.includes('2026-11-08'), 'Acceptance date missing');
+  for (const author of ['Qianren Guo', 'Qi Chu', 'Sen Liu', 'Yuehang Wang', 'Zhongzheng An', 'Shuang Xue', 'Yu Jiang*']) {
+    assert.ok(home.includes(author) && pubs.includes(author), 'HyperSign+ author missing: ' + author);
+  }
+  const acceptanceDisplay = locale === 'zh/' ? '已录用' : 'Accepted';
+  assert.ok(home.includes(acceptanceDisplay) && pubs.includes(acceptanceDisplay), 'Localized acceptance status missing');
   assert.ok(home.includes('2026.11.08'), '2026-11-08 news date missing');
   const expectedNews = locale === 'zh/'
     ? 'HyperSign+ 论文被 Pattern Recognition 录用。'
