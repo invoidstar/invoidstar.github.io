@@ -46,17 +46,17 @@ for (const locale of ['', 'zh/']) {
   assert.ok(home.includes(newTitle) && pubs.includes(newTitle), 'New HyperSign+ paper missing');
   assert.ok(home.includes(oldTitle) && pubs.includes(oldTitle), 'AAAI HyperSign paper must be retained');
   assert.ok(home.includes('Pattern Recognition') && pubs.includes('Pattern Recognition'), 'PR journal missing');
-  assert.ok(home.includes('2026-11-08') && pubs.includes('2026-11-08'), 'Acceptance date missing');
+  assert.ok(!home.includes('pub-accepted') && !pubs.includes('pub-accepted'), 'Removed acceptance badge should not render');
   for (const author of ['Qianren Guo', 'Qi Chu', 'Sen Liu', 'Yuehang Wang', 'Zhongzheng An', 'Shuang Xue', 'Yu Jiang*']) {
     assert.ok(home.includes(author) && pubs.includes(author), 'HyperSign+ author missing: ' + author);
   }
-  const acceptanceDisplay = locale === 'zh/' ? '已录用' : 'Accepted';
-  assert.ok(home.includes(acceptanceDisplay) && pubs.includes(acceptanceDisplay), 'Localized acceptance status missing');
-  assert.ok(home.includes('2026.11.08'), '2026-11-08 news date missing');
+  assert.ok(!home.includes('2026-11-08') && !pubs.includes('2026-11-08'), 'Detailed acceptance date should not appear in publication entries');
+  assert.ok(home.includes('2026.11'), 'Monthly HyperSign+ news date missing');
   const expectedNews = locale === 'zh/'
-    ? 'HyperSign+ 论文被 Pattern Recognition 录用。'
-    : 'HyperSign+ was accepted by Pattern Recognition.';
+    ? 'HyperSign+ 论文被 PR 录用。'
+    : 'HyperSign+ was accepted by PR.';
   assert.ok(home.includes(expectedNews), 'Localized HyperSign+ news missing');
+  assert.ok(!home.includes('HyperSign+ was accepted by Pattern Recognition.') && !home.includes('2026.11.08'), 'Old news phrasing must be removed');
   assert.equal((home.match(/class="pub-row/g) || []).length, 7, 'Expected seven home publication rows');
   assert.equal((pubs.match(/class="pub-row/g) || []).length, 7, 'Expected seven archive publication rows');
 

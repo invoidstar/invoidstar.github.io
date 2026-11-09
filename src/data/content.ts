@@ -257,7 +257,7 @@ export const researchAreas = [
 ];
 
 export const news = [
-  {date: '2026.11.08', en: 'HyperSign+ was accepted by Pattern Recognition.', zh: 'HyperSign+ 论文被 Pattern Recognition 录用。'},
+  {date: '2026.11', en: 'HyperSign+ was accepted by PR.', zh: 'HyperSign+ 论文被 PR 录用。'},
   {date: '2026.09', en: 'Started Ph.D. studies at UESTC.', zh: '于电子科技大学开始博士阶段的研究。'},
   {date: '2026.03', en: 'GANet was published in Complex Engineering Systems.', zh: 'GANet 论文发表于 Complex Engineering Systems。'},
   {date: '2026.02', en: 'TextSLR was accepted by IEEE TII.', zh: 'TextSLR 论文被 IEEE TII 接收。'},
@@ -346,7 +346,7 @@ export const copy = {
     filterVision: 'Computer Vision',
     selected: 'Featured',
     returnHome: 'Back to homepage',
-    publishedNote: '* denotes corresponding author where provided. Acceptance dates are noted separately from formal publication.',
+    publishedNote: '* denotes corresponding author where provided.',
     footerNote: 'Built with care, curiosity, and a little starlight.',
     footerRights: 'All rights reserved.',
     emailLabel: 'Email',
@@ -424,7 +424,7 @@ export const copy = {
     filterVision: '计算机视觉',
     selected: '精选',
     returnHome: '返回首页',
-    publishedNote: '若原始记录包含 *，则其表示通信作者。已录用论文与正式发表论文分别注明状态。',
+    publishedNote: '若原始记录包含 *，则其表示通信作者。',
     footerNote: '因好奇而探索，认真地做一些有用的东西。',
     footerRights: '保留所有权利。',
     emailLabel: '邮箱',
