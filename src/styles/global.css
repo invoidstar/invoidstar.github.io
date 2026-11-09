@@ -688,3 +688,7 @@ html[data-theme="dark"] .project-cover--elysiatools{background:linear-gradient(1
 @media(max-width:620px){
   .project-grid--research,.project-grid--full{grid-template-columns:minmax(0,1fr)}
 }
+
+/* Accepted manuscript: distinct from the journal's formally published papers. */
+.pub-accepted{display:inline-flex;align-items:center;margin:7px 0 0;padding:4px 9px;font-size:11px;font-weight:760;letter-spacing:.2px;border-radius:5px;background:#eeeaf8;color:#6c598e}
+html[data-theme="dark"] .pub-accepted{background:#392f50;color:#e0c6ff}

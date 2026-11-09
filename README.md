@@ -22,7 +22,7 @@ A bilingual academic homepage for **Qi Chu（初琦）**, covering publications,
 - **GitHub Pages only**: automatic deployment through `.github/workflows/deploy.yml` after a push to `main`; no additional hosting method.
 - **Light / dark themes**: respects system settings initially and remembers a manual choice.
 - **Bilingual content**: managed centrally in `src/data/content.ts`.
-- **Publications**: complete list on the homepage, with a dedicated filtering and 10-items-per-page view.
+- **Publications**: published and accepted papers, including HyperSign+ (Pattern Recognition, accepted November 8, 2026), with a dedicated filtering and 10-items-per-page view.
 - **Research projects**: ElysiaRobot, ElysiaCV, VLA-Radar and [ElysiaTools](https://github.com/invoidstar/ElysiaTools).
 - **Original portrait**: preserved in `public/assets/avatar.jpg`.
 

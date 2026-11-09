@@ -3,7 +3,8 @@ import type { Lang, Section } from '../lib/routes';
 export interface Publication {
   year: number;
   title: string;
-  authors: string;
+  authors?: string;
+  acceptedDate?: string; // ISO date for accepted manuscripts
   venue: string;
   venueShort: string;
   area: 'Multimodal' | 'Vision';
@@ -35,6 +36,17 @@ export interface Dataset {
 }
 
 export const publications: Publication[] = [
+  {
+    year: 2026,
+    title: 'HyperSign+: Multi-Scale Co-occurrence Perception for Hierarchical Sign Language Recognition and Translation',
+    // Acceptance is confirmed for 2026-11-08; publication details are not yet public.
+    venue: 'Pattern Recognition',
+    venueShort: 'PR',
+    area: 'Multimodal',
+    featured: true,
+    acceptedDate: '2026-11-08',
+    links: [],
+  },
   {
     year: 2026,
     title: 'TextSLR: Learning Text-Aware Representations for Sign Language Recognition',
@@ -244,6 +256,7 @@ export const researchAreas = [
 ];
 
 export const news = [
+  {date: '2026.11.08', en: 'HyperSign+ was accepted by Pattern Recognition.', zh: 'HyperSign+ 论文被 Pattern Recognition 录用。'},
   {date: '2026.09', en: 'Started Ph.D. studies at UESTC.', zh: '于电子科技大学开始博士阶段的研究。'},
   {date: '2026.03', en: 'GANet was published in Complex Engineering Systems.', zh: 'GANet 论文发表于 Complex Engineering Systems。'},
   {date: '2026.02', en: 'TextSLR was accepted by IEEE TII.', zh: 'TextSLR 论文被 IEEE TII 接收。'},
@@ -276,7 +289,7 @@ export const copy = {
     sectionResearch: 'Research interests',
     researchSubtitle: 'Connecting intelligent perception, purposeful actions, and the systems that make research reproducible.',
     sectionPubs: 'Publications',
-    pubsSubtitle: 'Published journal and conference papers, with a separate archive for filtering and pagination.',
+    pubsSubtitle: 'Published and accepted journal and conference papers, with a separate archive for filtering and pagination.',
     sectionProjects: 'Research projects',
     projectsSubtitle: 'Research frameworks and open scientific resources that support reproducible AI research.',
     sectionNews: 'Recent updates',
@@ -296,7 +309,7 @@ export const copy = {
     moreNews: 'More about me',
     pagePubEyebrow: 'ACADEMIC OUTPUT',
     pagePubTitle: 'Publications',
-    pagePubIntro: 'All published journal and conference papers, organized by topic with ten papers per page.',
+    pagePubIntro: 'Published and accepted journal and conference papers, organized by topic with ten papers per page.',
     pageProjectEyebrow: 'RESEARCH SYSTEMS & RESOURCES',
     pageProjectTitle: 'Projects',
     pageProjectIntro: 'Research platforms and open resources I develop or contribute to, with a focus on robot learning and VLA research.',
@@ -332,7 +345,7 @@ export const copy = {
     filterVision: 'Computer Vision',
     selected: 'Featured',
     returnHome: 'Back to homepage',
-    publishedNote: '* denotes corresponding author, where provided in the source material.',
+    publishedNote: '* denotes corresponding author where provided. Acceptance dates are noted separately from formal publication.',
     footerNote: 'Built with care, curiosity, and a little starlight.',
     footerRights: 'All rights reserved.',
     emailLabel: 'Email',
@@ -354,7 +367,7 @@ export const copy = {
     sectionResearch: '研究方向',
     researchSubtitle: '连接多模态感知、具身行动与可复用的科研系统。',
     sectionPubs: '论文发表',
-    pubsSubtitle: '按时间整理正式发表成果，独立论文页面支持方向筛选与分页浏览。',
+    pubsSubtitle: '按时间整理已发表及已录用论文，独立页面支持方向筛选与分页浏览。',
     sectionProjects: '科研项目',
     projectsSubtitle: '用于具身智能研究与可复现科研实践的框架和开放知识资源。',
     sectionNews: '近期动态',
@@ -374,7 +387,7 @@ export const copy = {
     moreNews: '了解更多',
     pagePubEyebrow: '学术成果',
     pagePubTitle: '论文发表',
-    pagePubIntro: '完整的正式发表论文列表，支持研究方向筛选，每页最多展示 10 篇。',
+    pagePubIntro: '完整的已发表及已录用论文列表，支持研究方向筛选，每页最多展示 10 篇。',
     pageProjectEyebrow: '科研框架与开放资源',
     pageProjectTitle: '项目作品',
     pageProjectIntro: '聚焦具身智能研究、机器人学习框架与开放科研知识基础设施。',
@@ -410,7 +423,7 @@ export const copy = {
     filterVision: '计算机视觉',
     selected: '精选',
     returnHome: '返回首页',
-    publishedNote: '若原始记录包含 *，则其表示通信作者。',
+    publishedNote: '若原始记录包含 *，则其表示通信作者。已录用论文与正式发表论文分别注明状态。',
     footerNote: '因好奇而探索，认真地做一些有用的东西。',
     footerRights: '保留所有权利。',
     emailLabel: '邮箱',

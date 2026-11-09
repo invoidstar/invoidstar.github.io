@@ -30,7 +30,7 @@ const initialVisible = Math.min(PAGE_SIZE, publications.length);
     <div class="publication-list publication-list--full" id="publication-list">
       {publications.map((item,index) => (
         <div class="publication-entry" data-area={item.area} hidden={index >= PAGE_SIZE}>
-          <Publication item={item} index={index+1}/>
+          <Publication item={item} index={index+1} lang={lang}/>
         </div>
       ))}
     </div>
