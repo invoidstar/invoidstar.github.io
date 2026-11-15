@@ -39,7 +39,7 @@ export const publications: Publication[] = [
   {
     year: 2026,
     title: 'HyperSign+: Multi-Scale Co-occurrence Perception for Hierarchical Sign Language Recognition and Translation',
-    authors: 'Qianren Guo, Qi Chu, Sen Liu, Yuehang Wang, Zhongzheng An, Shuang Xue, Yu Jiang*',
+    authors: 'Qianren Guo, Qi Chu, Sen Liu, Yuehang Wang, Zhongzheng An, Shuang Xu, Yu Jiang*',
     // Acceptance is confirmed for 2026-11-08; publication details are not yet public.
     venue: 'Pattern Recognition',
     venueShort: 'PR',
