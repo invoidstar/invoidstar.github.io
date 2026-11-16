@@ -47,7 +47,7 @@ for (const locale of ['', 'zh/']) {
   assert.ok(home.includes(oldTitle) && pubs.includes(oldTitle), 'AAAI HyperSign paper must be retained');
   assert.ok(home.includes('Pattern Recognition') && pubs.includes('Pattern Recognition'), 'PR journal missing');
   assert.ok(!home.includes('pub-accepted') && !pubs.includes('pub-accepted'), 'Removed acceptance badge should not render');
-  for (const author of ['Qianren Guo', 'Qi Chu', 'Sen Liu', 'Yuehang Wang', 'Zhongzheng An', 'Shuang Xue', 'Yu Jiang*']) {
+  for (const author of ['Qianren Guo', 'Qi Chu', 'Sen Liu', 'Yuehang Wang', 'Zhongzheng An', 'Shuang Xu', 'Yu Jiang*']) {
     assert.ok(home.includes(author) && pubs.includes(author), 'HyperSign+ author missing: ' + author);
   }
   assert.ok(!home.includes('2026-11-08') && !pubs.includes('2026-11-08'), 'Detailed acceptance date should not appear in publication entries');
